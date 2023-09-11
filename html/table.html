@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table and form</title>
+  <style>
+    body {
+      font-family: pretendard;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table th, thead {
+      background-color:#d8e9be;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #d3d3d3;
+    }
+    tfoot {
+      background-color:#68f;
+    }
+    table caption {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1> 테이블 연습</h1>
+  <!-- 테이블 시작 끝 선언 -->
+  <table border="1">
+    <caption>스케쥴에 따라 달라질 수 있음.</caption>
+    <!--표의 머리글 > thead -->
+    <thead>
+      <tr>
+        <th>지역</th>
+        <th>세부담당</th>
+        <th>연락처</th>
+        <th>이름</th>
+      </tr>
+    </thead>
+    <!-- 데이터가 들어갈 칸 선언 -->
+    <tr>
+      <td>수지</td>
+      <td>구성</td>
+      <td>031-123-1234</td>
+      <td>홍길동</td>
+    </tr>
+  </table>
+
+  <h2>논리적인 테이블 영역 구분</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>가</td>
+        <td>나</td>
+        <td>다</td>
+      </tr>
+      <tr>
+        <th>제목</th>
+        <th>제목</th>
+        <th>제목</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>머리글1</td>
+        <td>머리글2</td>
+        <td>머리글3</td>
+      </tr>
+      <tr>
+        <td>머리글1</td>
+        <td>머리글2</td>
+        <td>머리글3</td>
+      </tr>
+      <tr>
+        <td>머리글1</td>
+        <td>머리글2</td>
+        <td>머리글3</td>
+      </tr>
+      <tr>
+        <td>머리글1</td>
+        <td>머리글2</td>
+        <td>머리글3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>머리글1</td>
+        <td>머리글2</td>
+        <td>머리글3</td>
+      </tr>
+  </table>
+  <h3> 테이블의 제목셀</h3>
+  <table border="1">
+    <!-- tr>th*4{제목} -->
+    <tr>
+      <th> </th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+    </tr>
+    <tr>
+      <th scope="row">제목</th>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <th scope="row">제목</th>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+  </table>
+</body>
+</html>

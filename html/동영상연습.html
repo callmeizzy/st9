@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동영상 연습</title>
+  <style>
+    span{
+      color: #75307a;
+      background-color: #f0dabf;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>동영상 연습</h1>
+  <div>
+    <aside>
+      <h2>인라인의 사용법</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        <span>Tempora ipsa totam vitae repellendus animi exercitationemprovident est!</span>
+        <strong>Expedita iusto non beatae neque id iure, error fugit laudantium quod voluptate a!</strong>
+      </p>
+    </aside>
+  </div>
+  <!-- 동영상 태그 -->
+  <div class="video-wrap">
+    <video src="imgae-multimedia/media/halongbay_320.mp4" controls autoplay muted loop></video>
+  </div>
+<hr>
+  <!-- 사진 표지로 변경 및 자동재생 X -->
+  <div class="video-wrap">
+    <video src="imgae-multimedia/media/halongbay_320.mp4" controls muted loop poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg"></video>
+  </div>
+<hr>
+<!-- 위와 동일한 결과값 -->
+  <video controls muted poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg">
+    <source src="/HTML/멀티미디어/imgae-multimedia/media/halongbay_320.asf">
+    <source src="/HTML/멀티미디어/imgae-multimedia/media/halongbay_320.mp4">
+  </video>
+  <p>지원되지 않는 브라우저입니다.</p>
+  </div>
+
+</body>
+</html>
