@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 연습</title>
+  <style>
+    body {
+      background-color: #ffe6e2;
+      font-family: pretendard;
+      font-size: 14px;
+      color: #413628;
+      padding: 10%;
+    }
+  </style>
+</head>
+<body>
+  <h1> Form Tag</h1>
+  <form action="url" method="post|get">
+    <fieldset>
+      <legend>회원가입기본</legend>
+      <!-- 그룹명을 설명해주는 자식태그 -->
+      <ul>
+        <li><input type="text"> <input type="text"></li>
+        <li><label>아이디: <input type="text"></label></li>
+        <li><label for="pid">아이디 <input type="text" id="pid"></li>
+        <li><label for="pwd">비밀번호 <input type="password" id="pwd"></li>
+        <li><label for="ptel">연락처 <input type="number" id="ptel" placeholder="아이디를 입력"></li>
+        <li><label for="month">월 <input type="month" id="month"></li>
+        <li><label for="date">날짜 <input type="date" id="date"></li>
+        <li><label for="email">이메일 <input type="email" id="email"></li>
+        <li><label for="range">범위 <input type="range" id="range"></li>
+        <li><label for="checkbox">체크 <input type="checkbox" id="checkbox"></li>
+      </ul>
+    </fieldset>
+    <hr>
+      <!-- 오후수업 -->
+    <fieldset>
+      <legend>input</legend>
+      <ul>
+        <li><label for="checkbox"><input type="checkbox" id="checkbox">출력내용</li>
+        <li>
+          <input type="checkbox" name="interest" id="interest1" checked><label for="interest1">만화책보기</label>
+          <input type="checkbox" name="interest" id="interest2"><label for="interest2"></label>요리하기
+          <input type="checkbox" name="interest" id="interest3"><label for="interest3"></label>집청소
+          <input type="checkbox" name="interest" id="interest4" checked><label for="interest4"></label>영화보기
+        </li>
+        <!-- checkbox는 다중선택이 가능 -->
+        <!-- id와 for값이 동잃해해야함 -->
+      </ul>
+      <ul>
+        <li>
+          <!-- input:r > radio 버튼은 무조건 택 1만 가능-->
+          <input type="radio" name="shipping-address" id=""> 직장
+        </li>
+        <li>
+          <label for="ship1">직장</label><input type="radio" name="shipping-address" id="ship1" checked>
+          <label for="ship2">우리집</label><input type="radio" name="shipping-address" id="ship2">
+          <label for="ship3">부모님 집</label><input type="radio" name="shipping-address" id="ship3">
+        </li>
+      </ul>
+    </fieldset>
+    <hr>
+    <!-- 버튼만들기  
+        input:reset
+        input:submit -->
+    <p>
+      <input type="reset" value="취소">
+      <input type="submit" value="확인">
+      <input type="button" value="확인">
+    </p>
+    <!-- command + shift + p > emmet 발동 후 범위 감쌀 수 있음 -->
+    <p>
+      <span>버튼 만들기</span>
+      <button>버튼</button>
+      <button type="submit">submit/default</button>
+      <button type="reset">reset/cancel</button>
+      <button type="button">button</button>
+    </p>
+    <!-- input / button 둘다 무방하지만 스타일시트 활용하기엔 button이 훨씬 수월함 -->
+    <p>
+      <strong>글자 강조용</strong>
+      <input type="file" name="" id="">
+    </p>
+    <hr>
+    <fieldset>
+      <legend>목록메뉴</legend>
+      <ul>
+        <!-- 드롭다운 -->
+        <li>
+          <select name="" id="">
+            <option value="">선택해주세요</option>
+            <option value="https://www.naver.com">네이버</option>
+            <option value="">구글</option>
+            <option value="">다음</option>
+          </select>
+        </li>
+        <hr>
+        <!-- multiple > 목록태그 -->
+        <li>
+          <select name="" id="" multiple>
+            <option value="">선택해주세요</option>
+            <option value="https://www.naver.com">네이버</option>
+            <option value="">구글</option>
+            <option value="">다음</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+    <hr>
+    <!-- 환불 사유 적는 박스 또는 이용약관-->
+    <textarea name="" id="" cols="30" rows="3"></textarea>
+    <hr>
+    <div>
+    <p>placeholder : 텍스트 박스 백그라운드에서 출력되는 가이드 텍스트</p>
+    <p>required : 필수항목</p>
+    <input type="text" placeholder="이름을 입력해주세요." id="" required>
+    <input type="password" placeholder="비밀번호" id="">
+    <input type="submit" value="확인">
+    </div>
+  </form>
+</body>
+</html>
