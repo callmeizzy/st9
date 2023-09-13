@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-선택자연습</title>
+  <style>
+    /*선택자{속성:값;} */
+    body {
+      font-family: Lora;
+      color: #423e3e;
+      background-color: #f3dbd2;
+    }
+    #wrap>header {
+      color: #d5d8de;
+      background-color: #1c2e45;
+      border-radius: 300px;
+    }
+    /* container라는 class에 대해 css선언 */
+    .container {
+      padding: 50px;
+      text-align: center;
+      background-color: #e4a6a1;
+    }
+
+    /* h1 바로 옆 형제만 바뀜 */
+    /* #section2 h1+p {
+      background-color: #f7e7c5;
+    } */
+    /* h1의 모든 형제가 바뀜 */
+    #section2 h1~p {
+      background-color: #d7c5f7;
+    }
+
+    /* id:section2의 자식 p에 대해 css지정 */
+    /* !important 입력하면 모든 우선순서 무시하고 s표기됨 */
+    #section2>p {
+      background-color: #7e748b !important;
+    }
+
+    /* id:section2의 직계자손(자식 & 손주 & 후손 모두) p에 대해 css지정 */
+    #section2 p {
+      padding: 1px;
+      text-align: right;
+      color: #d5d8de;
+      background-color: #1c2e45;
+      border-radius: 300px;
+    }
+    /* 자식만 css 지정 이후 모든 자손 css지정되어 cascade(후행)css값이 출력됨 */
+    
+    #section3 {
+      background-color: #f3cece;
+      padding: 5px;
+      border-radius: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- #wrap>header+.container+footer -->
+  <div id="wrap">
+    <header>
+      <h1><strong>ㅤConstructure of CSS</strong></h1>
+    </header>
+    <div class="container">
+      <!-- section*3#section$ -->
+      <section id="section1">
+        section1
+      </section>
+      <section id="section2">
+        section2
+        <!-- p+.box>h1+p*2 -->
+        <p>section2&gt;pㅤ</p>
+        <div class="box">
+          section2&gt;p&gt;div.box
+          <h1>section2&gt;p&gt;div.box&gt;h1ㅤ</h1>
+          <p>section2&gt;p&gt;div.box&gt;pㅤ</p>
+          <p>section2&gt;p&gt;div.box&gt;pㅤ</p>
+        </div>
+      </section>      
+      <section id="section3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>Autem quibusdam voluptate maxime laudantium,<br>incidunt aliquam repellendus dignissimos tenetur<br>ex consequuntur minus reprehenderit,<br>aspernatur odit voluptatibus doloremque ducimus iste quia? Illo?</section>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+</html>

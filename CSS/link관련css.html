@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINK 관련 CSS</title>
+</head>
+<body>
+  <h1>LINK 관련 CSS</h1>
+  <!-- ul>li*3>a>{검색엔진$} -->
+  <ul>
+    <li><a href="https://www.naver.com">네이버로 이동</a></li>
+    <li><a href="http://www.google.com">검색엔진2</a></li>
+    <li><a href="https://www.daum.net">검색엔진3</a></li>
+    <li><a href="https://www.instagram.com">검색엔진4</a></li>
+  </ul>
+  <style>
+  /* a태그는 밑줄문자가 생성됨
+    방문한 적 있을 경우 글자색 > blue
+    방문한 적 없을 경우 글자색 > purple */
+    /*a {/* 문서 내 모든 a태그에 css입힘
+        color: rgb(225, 139, 0);}*/
+    a:link {/* a:link > a태그내 모든 link에 css입히는 가상클래스 명  */
+      color: #000;
+    }
+    a:visited {/* a:visited > a태그내 모든 link중 방문한 링크에 css입히는 가상클래스 명 */
+      color:#f8a9ff;
+    }
+    a:active { /* 마우스로 요소 링크 누를 때 변하는 컬러*/
+      color:#f2ff00
+    }
+    a:hover {/* 마우스로 요소 커서 올릴 때 변하는 컬러*/
+      color: aqua;
+      background-color: #003b6f;
+    }
+    a:focus {/* tab 단추 누를 때 */
+      color: #e37070;
+    }
+  </style>
+</body>
+</html>

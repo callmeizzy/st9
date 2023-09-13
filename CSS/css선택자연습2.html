@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css선택자연습2</title>
+  <style>
+    body{
+      font-family: "나눔", "궁서체";
+      font-size: 14px; /*0.875pm = 87.5% = 11pt*/
+      color: #3e3c3c;
+      background-color: #fff8ed;
+    }
+    .container .title {
+      /* 컨테이너의 자손들 중 title 클래스만 CSS 선언 */
+      /* 크고; 진하게 지정하기; 24px; 보라색; */
+      font-family: nanumsquare;
+      font-size: 24px;
+      font-weight: bold;
+      color: #9c74d3;
+    }
+    .title>a{
+      color: #ffb300;
+      text-decoration: none; /*밑줄문자 없애기*/
+    }
+    .container .title>a:hover {
+      color: #000;
+      text-decoration: underline;
+      background-color: rgba(0,0,255,0.5);
+      padding: 0.5rem 1rem; /*안쪽여백 상하좌우 적용*/
+    }
+    .box {
+      /* box 클래스; 10pt > px; 검정색; 줄간은 글자크기의 1.4x; */
+      font-family: Lora;
+      font-size: 13px;
+      font-style: italic;
+      color: #000;
+      margin: 1rem; /* rem > body의 글자크기 | em > 부모의 글자크기 */
+      line-height: 1.4; /*문서 내 줄간을 글자크기의 1.4배수로 지정한다*/
+      background-color: #ccc;
+      text-align: center;
+    }
+    #section2 .box:first-child {
+      font-family: "궁서체";
+      font-style: normal;
+      color: #c182a6;
+    }
+    #section2 .box:last-child {
+      font-family: nanumsquare;
+      color: #0c8c0a;
+    }
+    #section1 .box:nth-child(2) {
+      /*첫번째와 마지막 사이에 껴있는 자식들의 CSS 선언*/
+      font-family: pretendard;
+      color: #0a548c;
+    }
+
+    /* 쇼핑몰 디자인 수정에 적용 */
+    /* 카테고리 메뉴 중 첫번째 메뉴만 진하게 빨강색으로 변경 */
+    #category .position .xans-record-:first-child a{
+      color :#f00;
+      font-weight : bold;
+    } 
+
+    /* 카테고리 메뉴 중 세번째 메뉴를 빨강색 반투명 메뉴로 변경 */
+    #category .position .xans-record-:nth-child(3) a{
+      background-color :rgb(255, 0, 0, 0.5);
+    } 
+  </style>
+</head>
+<body>        
+    <!-- .wrap>header+(.main>#section$.container*2>.inner>(.title>{제목})+.desc>.box*2>lorem6)+footer -->
+    <div class="wrap">
+      <header></header>
+      <div class="main">
+        <div id="section1" class="container">
+          <div class="inner">
+            <div class="title"><a href>제목</a></div>
+            <p></p>
+            <div class="desc">
+              <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <div class="box">
+                Lorem ipsum dolor sit amet consectetur,adipisicing elit.<br>Sequi eaque ratione sapiente modi dolorem facere consequuntur veniam voluptatum,<br>reprehenderit adipisci iusto error,<br>alias sint unde ipsam culpaeius eum qui.<br>Dolor officiis nulla asperiores quasi pariatur,<br>fugiat harum quibusdam odio tempore accusantium at facilis eaque molestias expedita itaque,<br>cum omnis ducimus impedit? Doloribus dicta tempora sed illum non,<br>doloremque sequi!
+                Lorem ipsum dolor sit amet consectetur.
+              </div>
+              <div class="box">Quis incidunt eum dignissimos aliquid odio!</div>
+            </div>
+          </div>
+        </div>
+        <div id="section2" class="container">
+          <div class="inner">
+            <div class="title">제목</div>
+            <div class="desc">
+              <div class="box">Lorem ipsum dolor sit amet consectetur.</div>
+              <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore mollitia nobis,<br>laboriosam aliquid velit corporis.<br> Debitis quo perspiciatis fugiat similique est consequatur officiisodio ducimus quae numquam!<br>Corrupti, tempore aspernatur?<br>
+                Eveniet officia odio, nemo veritatis perferendis impedit nulla,<br> consectetur accusantium corporis, voluptate nihil est.<br>Ipsa distinctio omnis possimus consectetur nam rerum,<br>quasi dolor fugiat. Quam dolorem voluptate quod at sequi.<br>
+                Facilis labore voluptatibus ratione incidunt repudiandae.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+
+    <!-- .inner>(.title>{제목})+.desc -->
+    <div class="inner">
+      <div class="title">제목</div>
+      <div class="desc"></div>
+    </div>
+
+    <!-- .inner>.title>{제목}+.desc -->
+    <div class="inner">
+      <div class="title">
+        제목
+        <div class="desc"></div>
+      </div>
+  </body>
+</html>
