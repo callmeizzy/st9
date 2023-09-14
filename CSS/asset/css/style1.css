@@ -1,0 +1,44 @@
+  /* @import 선언되는 선언부 문서 앞에서 작성 */
+  /* 웹 폰트 사용하기 - IBM FLEX SANS*/
+  /* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400&family=Noto+Sans+KR:wght@100;400;600;700;900&display=swap'); */
+  /* font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif; */
+  body {
+  /* font-family: Lora, "나눔스퀘어";
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.4; */
+
+  /* font 간단표기법 > font: font-style font-variant font-weight font-size/line-height font-family; */
+  /* font: 14px/1.4 'IBM Plex Sans', sans-serif;
+  color: #005aa9; */
+
+  /* 핸드폰 방향 전환시 ios의 텍스트가 진하게 되는 현상 방지
+  -webkit > 브라우저 접두어 */
+  -webkit-text-size-adjust: none;
+}
+/* a태그는 부모의 설정값을 상속받지 않음, 가상클래스를 통해 지정해주어야 함*/
+/* a {
+  color :#10bb60;
+  font-weight: bold;
+  text-decoration: none;
+} */
+/* a:hover {
+  color: #b52b2b;
+  font-size: 20px;
+  text-decoration: underline;
+  background-color: rgba(255, 179, 0, 0.5);
+} */
+/* 타이포그래피 */
+ /* .page-title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  font-weight: 700;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  background-color: rgb(51, 132, 65, 0.7);
+  height: 80px;
+  border: 12px;
+  border-radius: 100px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+} */
