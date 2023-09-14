@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      /* total margin = auto(lm) + 10(lb) +50(lp) + 400(width) + 50(rp) + 10(rb) + auto(rm)*/
+      width: 400px;
+      height: 300px;
+      padding: 50px;
+      border: 10px solid #f86;
+      margin: 50px auto; /*block 가운데정렬*/
+      background-color: #333;
+      color: #fff;
+     }
+     .box1 {
+      box-sizing: content-box;
+      /* content-box 기본값 */
+     }
+     .box2 {
+      box-sizing: border-box;
+      /* boxsizing은 박스모델 계산법을 지정
+      width/height 지정값이
+        박스모델 content 영역지정 > 기본값
+        박스모델 border + padding + content > border-box
+      width 선언된 값은 border + padding + content */
+     }
+  </style>
+</head>
+<body>
+  <!-- .wrap>.box.box$*2>lorem*2 -->
+  <div class="wrap"></div>
+    <div class="box box1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, quasi! Incidunt numquam sint, ipsa provident accusantium quas quod deleniti eligendi quasi id exercitationem odit optio repudiandae ut voluptatibus quibusdam ea!
+    Consequuntur, iusto. Qui odio illo deleniti numquam quia adipisci, sapiente tenetur, beatae mollitia velit quod quisquam excepturi aliquam perferendis voluptates accusantium! Consequatur veritatis libero eaque voluptatum repellendus minus fugit pariatur!</div>
+    <div class="box box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloremque quia eaque, et tenetur nulla alias eius, adipisci ipsam ipsa nemo, cupiditate labore delectus fugiat modi! Consequuntur dignissimos at autem.
+    Molestiae nisi nulla veritatis dolores hic minima voluptate, reiciendis deserunt maxime quia est porro iste dolore excepturi blanditiis atque suscipit pariatur consectetur eveniet aut asperiores ea. Sunt debitis nobis expedita!</div>
+</body>
+</html>
