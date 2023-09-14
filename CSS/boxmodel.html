@@ -22,9 +22,9 @@ body{
   background-color: #b2edbf;
 
   /* 안쪽여백 padding / 바깥여백 margin */
-  padding: 10px 20px 30px 40px;
+  /* padding: 10px 20px 30px 40px; */
             /* 상 우 하 좌 > 시계방향*/
-  margin: 50px;
+  /* margin: 50px; */
 }
 /* div의 두번째 자식 .box padding 모두 50px */
 div:nth-of-type(2) {
@@ -36,7 +36,26 @@ div:nth-of-type(2) {
 div:nth-of-type(3) {
   padding: 10px 20px 30px;
   /* padding: 상 좌우 하; */
+  /* 요소의 수평크기  */
   background-color: #cebdf4;
+}
+/* block 레벨 */
+*{padding: 0; margin: 0;}
+/* 모든 요소의 밖, 안쪽 여백 없애기 */
+h1 {
+  background-color: #ff7ead;
+}
+.box:first-child {
+  margin: 50px;
+}
+
+.box:nth-of-type(1) {
+  margin: 50px;
+}
+.box:nth-of-type(2) {
+  width:300px;
+  margin:100px auto;
+      /* 상하   좌우 */
 }
 </style>
 </head>
