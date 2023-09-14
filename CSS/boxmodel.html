@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmodel</title>
+  <!-- 외부의 css 스타일시트 파일 불러오기 -->
+<link rel="stylesheet" href="asset/css/style1.css">
+<!-- html 문서 내에서 css 선언 -->
+<style>
+body{  
+  font-family: lora;
+  background-color: bisque;
+  }
+.box {
+  /* border-color: #000;
+  border-style: solid;|dashed;|dotted:
+  border-width: 1px; */
+  /* 한번에 쓰기 */
+  border: #000 dotted 10px;
+  border-top-color: #ff5e5e;
+  background-color: #b2edbf;
+
+  /* 안쪽여백 padding / 바깥여백 margin */
+  padding: 10px 20px 30px 40px;
+            /* 상 우 하 좌 > 시계방향*/
+  margin: 50px;
+}
+/* div의 두번째 자식 .box padding 모두 50px */
+div:nth-of-type(2) {
+  padding: 28px 50px;
+  /* padding: 상하 좌우; */
+  background-color: #ffd874;
+}
+
+div:nth-of-type(3) {
+  padding: 10px 20px 30px;
+  /* padding: 상 좌우 하; */
+  background-color: #cebdf4;
+}
+</style>
+</head>
+<!-- js 사용시. 태그에 인라인으로 css적용 및 우선순위 값이 더 높음 -->
+<body> 
+  <h1 class="page-title">웹 폰트 사용</h1>
+  <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum vel molestias eius modi et eligendi, incidunt alias quo expedita optio id mollitia neque quod, accusamus quia saepe quaerat cupiditate esse.</div>
+  <!-- .box>lorem -->
+  <div class="box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi porro inventore saepe commodi vitae error unde alias provident ipsum esse accusamus possimus dolorum beatae reiciendis, eveniet illo ut at recusandae.</div>
+  <!-- ul>li*4>a>{text$} -->
+  <ul>
+    <li><a href="https://www.naver.com" target= "_blank">text1</a></li>
+    <li><a href="">text2</a></li>
+    <li><a href="">text3</a></li>
+    <li><a href="">text4</a></li>
+  </ul>
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae expedita voluptas quibusdam. Ab, ratione magnam excepturi dolorum assumenda deserunt quaerat dignissimos quam dolorem deleniti ut ipsam veniam, est iste!</div>
+</body>
+</html>
