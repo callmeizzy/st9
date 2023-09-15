@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-image-3</title>
+</head>
+<body>
+  <div class="wrap"></div>
+  <div class="content">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit numquam non dolor, rem illum recusandae fuga vel debitis molestiae reiciendis obcaecati. Hic quas, beatae modi ipsa dolor praesentium doloremque!</div>
+    <div>Libero, explicabo natus voluptatem maxime quo dolor alias quos fugit error, ut quas deserunt molestias. Illo, ad assumenda facere, facilis quidem, voluptatum dolores rerum optio excepturi omnis magnam temporibus ullam.</div>
+  </div>
+  <style>
+    * {margin: 0; padding: 0;}
+    .wrap {
+      width: 100%;
+      height: 100vw;
+      /* width 100vw * 스크롤 바 포함한 너비 높이 vw/
+      /* 100vw 뷰포트의 너비 높이 다 쓸것 */
+      background-color: #f86;
+      background-image: 
+        url(images/sun.png),
+        url(images/flower.png),
+        url(images/field2.png);
+      background-repeat: 
+        no-repeat,
+        repeat-x,
+        repeat-x;
+      /* background-position: right top; */
+      background-position: 
+        100% 0, /*right top*/
+        0 100%, /*left bottom*/
+        center bottom /* 50% 0*/;
+    }
+  </style>
+</body>
+</html>

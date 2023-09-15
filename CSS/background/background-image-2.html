@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-image</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="section section1">
+        <p class="section-title">section title1</p>
+      </div>
+      <div class="section section2">
+        <p class="section-title">section title2</p>
+      </div>
+      <div class="section section3">
+        <p class="section-title">section title3</p>
+      </div>
+      <div class="section section4">
+        <p class="section-title">section title4</p>
+      </div>
+    </div>
+  </div>
+    <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      /* width: 1400px; */
+      margin: 0 auto;
+    }
+    .section {
+      width: 100%; 
+      min-height: 500px;
+      /* wrap의 콘텐츠 영역을 다 사용하겠다. */
+      background-color: #ccc;
+      /* margin-bottom: 10px; */
+    }
+    /* section$의 배경색 변경 */
+    .section1 {
+      background-color: #f189a0;
+    }
+    .section2 {
+      background-color: hsl(123, 100%, 92%);
+
+    }
+    .section3 {
+      background-color: #b3c2f8;
+      background-image: url(images/bg.jpg);
+      /* background-position: 0,0; */
+      background-position: center center;
+      background-attachment: fixed;
+    }
+    .section4 {
+      background-color: #b29ff7;
+    }
+    .section .section-title {
+      box-sizing: border-box;
+      width: 90%;
+      padding: 2rem 1rem;
+      background-color: #ccc;
+      margin: 0 auto;
+      /* 가운데 정렬 */
+    }
+    </style>
+  </body>
+</html>
