@@ -5,110 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>boxmodel 2 - 박스 계산법</title>
   <!-- 외부의 css 스타일시트 파일 불러오기 -->
-<link rel="stylesheet" href="asset/css/style1.css">
-<!-- html 문서 내에서 css 선언 -->
-<style>
-body{  
-  font-family: lora;
-  /* background-color: bisque; */
-  }
-/*.box {
-  /* border-color: #000;
-  border-style: solid;|dashed;|dotted:
-  border-width: 1px; */
-  /* 한번에 쓰기 */
-  /* border: #000 dotted 10px;
-  border-top-color: #ff5e5e;
-  background-color: #b2edbf; */
+  <link rel="stylesheet" href="asset/css/style1.css">
+  <!-- html 문서 내에서 css 선언 -->
+  <style>
+    body {
+      font-family: lora;
+      /* background-color: bisque; */
+    }
 
-  /* 안쪽여백 padding / 바깥여백 margin */
-  /* padding: 10px 20px 30px 40px; */
-            /* 상 우 하 좌 > 시계방향*/
-  /* margin: 50px;} */
+    /*.box {
+    /* border-color: #000;
+    border-style: solid;|dashed;|dotted:
+    border-width: 1px; */
+    /* 한번에 쓰기 */
+    /* border: #000 dotted 10px;
+    border-top-color: #ff5e5e;
+    background-color: #b2edbf; */
 
-/* div의 두번째 자식 .box padding 모두 50px*/
-/* div:nth-of-type(2) { */
-  /* padding: 28px 50px;
-  padding: 상하 좌우; */
-  /* background-color: #ffd874;} */
+    /* 안쪽여백 padding / 바깥여백 margin */
+    /* padding: 10px 20px 30px 40px; */
+    /* 상 우 하 좌 > 시계방향*/
+    /* margin: 50px;} */
 
-/*div:nth-of-type(3) { */
-  /* padding: 10px 20px 30px; */
-  /* padding: 상 좌우 하; */
-  /* 요소의 수평크기  */
-  /*background-color: #cebdf4; }*/
-/* block 레벨 */
-*{padding: 0; margin: 0;}
-/* 모든 요소의 밖, 안쪽 여백 없애기 */
-h1 {
-  background-color: #ff7ead;
-}
-/* .box:first-child {
-  margin: 50px;
-} */
+    /* div의 두번째 자식 .box padding 모두 50px*/
+    /* div:nth-of-type(2) { */
+    /* padding: 28px 50px;
+    padding: 상하 좌우; */
+    /* background-color: #ffd874;} */
 
-.box:nth-of-type(1) {
-  margin: 50px;
-}
-.box:nth-of-type(2) {
-  background-color: #ccc;
-  padding: 30px 50px;
-  border: 1px solid #000;
-  width:300px;
-  /* margin:100px auto; */
-        /* 상하   좌우 */
-  /* margin: 상하 auto; 블록레벨을 가운데에 위치시킨다 */
-text-align: center;
-}
-/* ul */
-ul {
-  width: 80%;
-  margin: 50px auto;
-  background-color: #ccc;
-  /* block 레벨의 자식 중 인라인레벨과 텍스트를 정렬 */
-  text-align: center;
-}
-ul>li {
-  background-color: #ff8989;
-  /* 블럭레벨임. 부모의 너비 그대로 계승함 */
-  /* width: 100px; inline으로 변환하니 적용이 안됨 */
-  /* width:25%; */
-  width: calc(25%-2px);
-  /* 수평으로는 하나의 블럭 레벨만 위치 가능 / 다단으로 처리하고 싶으면 다른 속성을 이용해야함*/
-  display: inline-block;
-  /* display 속성으로 block to inline 전환 */
-  /* inline-block 인라인 줄바꿈 없는 특징, 블록의 크기지정 특징 */
-}
-.test {
-  color: #89df00;
-  background-color: #aab5ff;
-  font-weight: bold;
-  border: 1px solid #000;
-  /* inline 레벨은 수직여백을 정상적으로 적용할 수 없다
-  padding: 50px;
-  margin: 50px; */
-  padding: 0 1rem;
-  margin: 0 2rem;
-  /* 인라인 레벨은 크기지정 불가.
-    자신이 포함된 내용만큼의 크기를 유지함.
-    그래서 하단의 width 적용이 안되는 것  */
-  width: 300px;
-}
-</style>
+    /*div:nth-of-type(3) { */
+    /* padding: 10px 20px 30px; */
+    /* padding: 상 좌우 하; */
+    /* 요소의 수평크기  */
+    /*background-color: #cebdf4; }*/
+    /* block 레벨 */
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* 모든 요소의 밖, 안쪽 여백 없애기 */
+    h1 {
+      background-color: #ff7ead;
+    }
+
+    /* .box:first-child {
+    margin: 50px;
+  } */
+
+    .box:nth-of-type(1) {
+      margin: 50px;
+    }
+
+    .box:nth-of-type(2) {
+      background-color: #ccc;
+      padding: 30px 50px;
+      border: 1px solid #000;
+      width: 300px;
+      /* margin:100px auto; */
+      /* 상하   좌우 */
+      /* margin: 상하 auto; 블록레벨을 가운데에 위치시킨다 */
+      text-align: center;
+    }
+
+    /* ul */
+    ul {
+      width: 80%;
+      margin: 50px auto;
+      background-color: #ccc;
+      /* block 레벨의 자식 중 인라인레벨과 텍스트를 정렬 */
+      text-align: center;
+    }
+
+    ul>li {
+      background-color: #ff8989;
+      /* 블럭레벨임. 부모의 너비 그대로 계승함 */
+      /* width: 100px; inline으로 변환하니 적용이 안됨 */
+      /* width:25%; */
+      width: calc(25% - 4px);
+      /* 수평으로는 하나의 블럭 레벨만 위치 가능 / 다단으로 처리하고 싶으면 다른 속성을 이용해야함*/
+      display: inline-block;
+      /* display 속성으로 block to inline 전환 */
+      /* inline-block 인라인 줄바꿈 없는 특징, 블록의 크기지정 특징 */
+    }
+
+    .test {
+    color: #000000;
+    background-color: #aab5ff;
+    font-weight: bold;
+    border: 1px solid #000;
+      /* inline 레벨은 수직여백을 정상적으로 적용할 수 없다
+    padding: 50px;
+    margin: 50px; */
+      padding: 0 1rem;
+      margin: 0 2rem;
+      /* 인라인 레벨은 크기지정 불가.
+      자신이 포함된 내용만큼의 크기를 유지함.
+      그래서 하단의 width 적용이 안되는 것  */
+      width: 300px;
+    }
+  </style>
 </head>
 <!-- js 사용시. 태그에 인라인으로 css적용 및 우선순위 값이 더 높음 -->
 <body> 
   <h1 class="page-title">웹 폰트 사용</h1>
+
   <div class="box">Lorem, <span class="test">ipsum dolor</span> sit <span class="test">amet consectetur</span> adipisicing elit. Illum vel molestias eius modi et eligendi, incidunt alias quo expedita optio id mollitia neque quod, accusamus quia saepe quaerat cupiditate esse.</div>
   <!-- .box>lorem -->
   <div class="box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi porro inventore saepe commodi vitae error unde alias provident ipsum esse accusamus possimus dolorum beatae reiciendis, eveniet illo ut at recusandae.</div>
   <!-- ul>li*4>a>{text$} -->
   <ul>
-    <li><a href="https://www.naver.com" target= "_blank">text1</a></li>
+    <li><a href="https://www.naver.com" target= "_blank">네이버</a></li>
     <li><a href="">text2</a></li>
     <li><a href="">text3</a></li>
     <li><a href="">text4</a></li>
   </ul>
+
   <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae expedita voluptas quibusdam. Ab, ratione magnam excepturi dolorum assumenda deserunt quaerat dignissimos quam dolorem deleniti ut ipsam veniam, est iste!</div>
 </body>
 </html>
