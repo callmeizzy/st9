@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-text-img</title>
+</head>
+<body>
+  <!-- .container>.box*3.box$>{text$} -->
+  <div class="container">
+  <div class="box box1">text1</div>
+  <div class="box box2">text2</div>
+  <div class="box box3">text3</div>
+  <div class="box box4">text4</div>
+</div>
+<style>
+  * {margin: 0; padding: 0;}
+  .container {
+    margin: 50px;
+    /* margin > 컨테이너  */
+    border: 1px solid #000;
+    padding: 50px;
+    /* padding > 테두리 내 여백 */
+  }
+  .box {
+    padding: 10px 70px;
+    border: 10px dotted #ff7d7d;
+    background-color: #fff7e2;
+    margin-bottom: 50px;
+  }
+  .box:last-child {
+    margin-bottom: 0;
+    /* box의 마지막 자식은 마진을 주지 않겠다 > 이유: 패딩값 50 +마진바텀 50 = 100px */
+  }
+  .box1 {
+    background-image: url(./background/images/img1.png);
+    background-size: 70px auto;
+    /* 너비값만 지정하면 높이눈 비율을 유지한 채 이미지를 표시하겠다. */
+    background-repeat: no-repeat;
+    min-height: 300px;
+    /* background-position: 3% -6%; */
+    /* background-position: -20px -20px; */
+    background-position: 15px -17px;
+  }
+  .box2 {
+    /* background-image: url(./background/images/sprite.png); */
+    background-repeat: no-repeat;
+    /* bg-r은 습관으로 지정하기 */
+    min-height: 300px;
+    padding-left: 0;
+    /* 부모 class인 .box의 padding:20px(상하) 70px(좌우)의 left 70px 무시하기 위함 */
+  }
+  .box2::before {
+    /* content: 'box2앞'; */
+    content:'';
+    /* block처리하려면 content 속성이 있어야 함 안그러면 영역 못먹음 > content:'';*/
+    width : 90px;
+    height: 105px;
+    display: block;
+    margin: 0 auto;
+    /* block레벨은 text-align으로 정렬이 x > margin:0 auto;로 처리 */
+   
+    /*background: transparent url(./background/images/sprite.png) no-repeat 0 -955px; */
+    background-image: url(./background/images/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 0px -955px;
+    /* 이 아이콘을 최 상단으로 올리려면 y축만 이동해야하니깐 음수처리 */
+    background-color: transparent;
+    /* 부모 배경 무시. 투명화 */
+  }
+  .box2::after {
+    content: 'box2뒤';
+  }
+  .box3 {
+    line-height: 60px ;
+    /* 한 줄짜리 텍스트를 정확하게 가운데 지정하고 싶을 떄 사용하는 방법. 특히 제목*/
+    padding: 0; /*부모 클래스에서 상속받은 패딩 수치 초기화*/
+    padding-left: 33px; /*초기화 한 수치 재 지정*/
+    /* padding 20px inherit; */
+    /* min-height : 60px */
+    background-image: url(./background/images/face_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-position: 4px 17px ;
+    background-origin: padding-box;
+    background-clip: border-box; /*해당영역안에만 백그라운드 이미지, 컬러 삽입*/
+  }
+  .box4 {
+    /* 글자 앞에 여백 1글자 삽입*/
+    padding-left: 1em;
+    /* 배경 이미지 반복 없이 face 아이콘 넣기 */
+    background-image: url(./background/images/face_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    /* 배경이미지를 .box4 요소의 오른쪽 끝 맨 위(10px)에 삽입*/
+    background-position: 100% 10px;
+  }
+</style>
+</body>
+</html>
