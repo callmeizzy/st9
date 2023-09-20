@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font 가져오는 방법 1 > 외부 파일 가져오는 방법 link : head와 title 태그 사이에만 넣어야 함-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- font-family: 'Raleway', sans-serif; -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- font-family: 'Noto Sans KR', sans-serif; -->
+
+  <!-- font 가져오는 방법 2 > @import : style 태그 별도 만들어서 삽입-->
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+    * {
+      box-sizing: border-box;
+      /* 상속되는 것이 아니라서 어디에 지정할 것인지 정확하게 명시해주어야 함 */
+    }
+    body,
+    div,
+    span,
+    h1 {
+      margin: 0; 
+      padding: 0;
+    }
+    body {
+      font-family: 'Raleway','Noto Sans KR', sans-serif;
+      font-size: 14px;
+      color: #000;
+      line-height: 1.4;
+      /* 간단표기법
+      font : 14px/1.4 'Raleway','Noto Sans KR', sans-serif; 
+      */
+    }
+    .banner-wrap {
+      width : 100%; /* 부모의 콘텐츠 영역을 다 쓸게요*/
+       /*for test*/
+      /* background-color: #ff9696;
+      border: 1px solid #000; */
+      /* 부모가 자식의 float 지정된 단 요소를 인식하지 못해서 overflow 입력 */
+      overflow: hidden;
+    }
+    .banner-wrap .left {
+      width: 60%; /*부모로부터 옴*/
+      height : 500px; /*자식으로 부터 옴. left는 자식이 x > 별도로 값 지정해줘야 함*/
+      /* 높이 지정 시 배경 이미지 크기를 고려해서 지정 */
+      /* background-color: #f68; */
+      /* css에서 이미지 삽입 및 반복 x */
+      background-image: url(/st9/CSS/background/images/main-banner01.jpg);
+      background-repeat: no-repeat;
+      /* 수평 오른쪽 끝 & 수직 가운데에 위치 */
+      background-position: 100% center;
+      /* 배경 이미지의 크기를 요소의 크기에 맞게 조정 */
+      background-size: cover; /*contain 이랑 비교해볼것*/
+      /* 배경이미지 둥글게 표시 */
+      border-radius: 0 250px 250px 0%;
+      /* 단 처리 css */
+      float: left;
+    }
+    .banner-wrap .right {
+      width: 40%;
+      padding-left: 100px;
+      /* for test */
+      /* background-color: rgb(230, 224, 255); */
+      /* 단처리 css */
+      float: left;
+    }
+    .banner-wrap .right .text {
+      /* .banner-wrap .right > spanß */
+      display: block;
+    }
+    .banner-wrap .right .text1 {
+      margin-top: 110px;
+      font-size: 18px;
+      /* 자간 넓게 */
+      letter-spacing: 2px;
+    }
+    .banner-wrap .right .text2 {
+      font-size: 100px;
+      font-weight: 700;
+    }
+    .banner-wrap .right .text2 span {
+      letter-spacing: -6px;
+      padding-right: 0px; /*span 태그 간 여백 지정*/
+      /* display: inline; 줄바꿈 없이 크기 지정 변경 */
+      
+    }
+    .banner-wrap .right .text3 {
+      display:inline-block;
+      font-size: 20px;
+      border: 1px solid #000;
+      margin-top: 40px;
+    }
+    /* text3 버튼 만들기 */
+    .banner-wrap .right .text3 a {
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 400;
+      color: #000; /*a컬러는 부모로부터 상속받지 않음*/
+      background-color: #fff;
+      /* background-color: #92ffcc; */
+      padding: 10px 15px;
+      display: block; /*부모의 너비 계승하도록*/
+    }
+    /* a태그 버튼에 마우스 오버시 배경과 글자색 변경해주기 위한 가상클래스 */
+    .banner-wrap .right .text3 a:hover {
+      background-color: #000;
+      color:#fffcfc
+    }
+    /* float지정한 요소들 뒤에 작성된 요소들이 float 영향 받지 않도록 마무리 */
+    .banner-wrap::after{
+      content:'';
+      display: block;
+    clear: both;
+    }
+    </style>
+</head>
+<body>
+  <h1>float 연습</h1>
+  <div class="sample">
+    릴케 책상을 같이 봅니다. 된 피어나듯이 않은 밤을 무성할 이름자를 있습니다. 이국 나는 아이들의 시와 너무나 이름자 무엇인지 계십니다. 아무 써 별 파란 아름다운 지나고 옥 봅니다. 나의 북간도에 사람들의 헤일 별 강아지, 언덕 토끼, 있습니다. 멀리 이름과, 언덕 부끄러운 애기 겨울이 있습니다. 많은 그리고 쓸쓸함과 듯합니다. 어머니, 별빛이 걱정도 별 계집애들의 이름을 않은 계십니다. 강아지, 나는 별에도 봅니다.
+  </div>
+  <div class="banner-wrap">
+    <div class="left"> 
+    </div>
+    <div class="right">
+      <span class="text text1">
+        Runway items season off
+      </span>
+      <span class="text text2">
+        <span>30</span>
+        <span>%</span>
+      </span>
+      <span class="text text3">
+        <a href="https://www.massimodutti.com/kr/?gclid=CjwKCAjwjaWoBhAmEiwAXz8DBcg82qaE1sx18ojTWRVkaF7vogY7KBynJpDgTD3676UGzf02y9qMBBoCy5oQAvD_BwE" target="_blank"> 
+          Shop Now
+        </a>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
