@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float로 layout잡기</title>
+  <style>
+    /* reset */
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+      /* 기본서체설정 */
+      font-family: "나눔고딕스퀘어";
+      font-size: 14px;
+    }
+    /* layout */
+    /* header layout */
+    header {
+      padding: 1rem; 
+      /*
+      바디에 지정한 크기만큼 한 글자 여백. em이라고 적으면 header에 지정한 크기로 변경됨. 
+      우리는 header에 크기 지정을 하지 않아서 rem으로 입력
+      */
+      background-color: #ccc;
+    }
+    /* .container layout */
+    .container {
+      width: 90%;
+      min-width: 1400px;
+      background-color: #eee;
+      margin: 0 auto; /* block level 가운데 정렬 */
+      overflow: hidden; /* float가 지정된 자식을 인식시키기 위해서*/
+    }
+    /* 부모 :: after > float를 지정한 요소의 이후 요소에게 float영향을 제거함 */
+    .container::after {
+      content: '';
+      display: block;
+      float : clear;
+    }
+    /* .container 전체 자식 layout */
+    .container .col {
+      box-sizing: border-box;
+      border: 1px solid #000;
+      background-color: #f68;
+      min-height : 300px;
+    }
+    /* .container > .side-menu layout  */
+    .side-menu {
+      width: 20%;
+      max-width: 250px;
+      float: left;
+    }
+    /* .container > .content layout */
+    .content {
+      width: 60%;
+      min-width: 900px;
+      /* 부모 1400 - 형제 500 = 나머지 900 할당 */
+      float: left;
+    }
+    /*  .container > .right-side layout */
+    .right-aside {
+      width: 20%;
+      max-width: 250px;
+      float: left;
+    }
+    /* footer layout */
+    footer {
+      padding: 1rem; 
+      background-color: #ccc;
+    }
+    </style>
+</head>
+<body>
+  <!-- header>{header}^.container>.side-menu+.content+aside^footer>{footer} -->
+  <header>header</header>
+  <div class="container">
+    <div class="side-menu col">side-menu</div>
+    <div class="content col">content</div>
+    <aside class="right-aside col">aside</aside> 
+    <!-- col > 위 자식들을 한 번에 부르기 위해 class="col"추가 -->
+    <!-- 
+      <aside>aside</aside>
+      * BEM방식
+      aside는 클래스에 방향 붙여서 하기와 같이 작성하기도 함
+      <aside class="right-aside">aside</aside> 
+    -->
+  </div>
+  <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>related-with-table</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    .container {
+      margin: 50px;
+      font-family: lora;
+      }
+      table, tr, td, th {
+        box-sizing: border-box;
+        /* 한번 씩 지정  */
+      }
+
+      table.sample {
+        border-collapse: collapse;
+        /* deperate가 default 값 맨 처음에 적용해주는 것을 권장 */
+        width: 100%;
+        /* 부모의 콘텐츠 영역(.container)을 다 쓰겠다. */
+        border: 1px solid #ff8484;
+        /*전체 표 테두리*/
+        border-top: 10px solid #f86;
+        box-sizing: border-box;
+        /* 테이블 만들 때 필수. 계산이 편해짐 */
+        table-layout: fixed;
+        /* 테이블과 셀에 너비를 지정해줌. 무너지는 것 방지 */
+      }
+      .sample th, 
+      .sample td {
+        padding: 1em;
+        /* 한 글자씩 여백 */
+        border: 1px solid #000;
+        /* 셀 테두리 */
+        box-sizing: border-box;
+      }
+      .sample th:nth-child(1) {
+        width: 13rem;
+      }
+      .sample tr:nth-child(1) th {
+        background-color: #000;
+        color: #fff;
+        padding: 1rem;
+      }
+      .sample th:nth-child(3) {
+        width: 150px;
+      }
+      .sample tr:nth-child(1) td {
+        vertical-align: middle;
+      }
+      .sample tr:nth-child(2) td {
+        vertical-align: top;
+      }
+      .sample tr:nth-child(3) td {
+        vertical-align:  middle;
+      }
+      .sample tr:nth-child(4) td{
+        vertical-align: bottom;
+      }
+      /* 짝수번째 줄 */
+      .sample tr:nth-child(even) td {
+        background-color: #ffb9b9;
+      }
+      /* 홀수번째 줄 */
+      .sample tr:nth-child(odd) td {
+        background-color: #f0ffc7;
+      }
+      .sample tr:hover td {
+        background-color: #ffda55;
+      }
+</style>
+</head>
+<body>
+  <!-- 테이블 관련 css -->
+  <!-- .container>table.sample+tr>th*3>{title$}^tr -->
+  <!-- .container>table.sample+tr>th*3>{title$}^^tr -->
+  <!-- .container>table.sample>tr>th*3>{title$}^^tr>tr*3>td*3>lorem2 -->
+  <div class="container">
+    <table class="sample">
+      <tr>
+        <th>title1</th>
+        <th>title2</th>
+        <th>title3</th>
+      </tr>
+      <!-- 2nd tr -->
+      <tr>
+        <tr>
+          <td>가나다 라마바 사아자</td>
+          <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat sunt ipsa reiciendis adipisci perferendis delectus facilis dolor accusantium aliquam neque, nulla labore. Quis velit qui, consequuntur minus eius dolorem molestias?
+          Cumque possimus, necessitatibus vel, asperiores tempore molestiae magni et quaerat blanditiis dignissimos dolorum, repudiandae veniam suscipit. Velit aliquid, illum impedit quod est totam in incidunt quasi saepe excepturi, voluptate atque?x</td>
+          <td>Expedita, ipsam.</td>
+        </tr>
+        <!-- 3rd tr -->
+        <tr>
+          <td>Lorem, ipsum.</td>
+          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius doloremque quibusdam ipsum vero et eos, eaque reprehenderit! Nobis, recusandae ea velit modi qui, nam maxime neque ab, molestiae atque iure.
+          Nulla temporibus nesciunt facere deleniti, beatae error necessitatibus quaerat harum. Eum, aspernatur asperiores. Commodi delectus perferendis cum enim fugiat fuga, iure doloremque minima mollitia sunt aliquid architecto voluptate ab atque!</td>
+          <td>Atque, cumque?</td>
+        </tr>
+        <!-- 4th tr -->
+        <tr>
+          <td>Lorem, ipsum.</td>
+          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam excepturi sint itaque asperiores assumenda nesciunt dolores sapiente commodi repellendus corporis, at tempore maiores dicta pariatur fugiat soluta. Impedit, qui atque.
+          Dolor amet aspernatur magnam unde quos assumenda odio veritatis voluptatum in, dicta, distinctio sequi maiores, saepe cum laborum error. Illo, sapiente velit consequatur dolore ullam repellat quo a praesentium voluptates.</td>
+          <td>Nostrum, amet.</td>
+        </tr>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
