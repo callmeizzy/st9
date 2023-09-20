@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 말 줄임표 관련 css</title>
+  <style>
+    .sample {
+      font-family: lora;
+      width: 400px;
+      margin: 100px auto;
+      box-sizing: border-box;
+      border: 1px solid #000;
+    }
+    .box {
+      padding: 30px;
+      background-color: #d4cfd0;
+    }
+    .box p {
+      background-color: #f68;
+      /* height: 150px; */
+      margin-bottom: 50px;
+
+      /* 말줄임 관련 */
+      /* white-space: normal; */
+      white-space: nowrap;
+
+      /* 넘치는 텍스트는 숨김 및 생략처리 */
+      overflow: hidden;
+      
+      /* 넘치는 텍스트는 ...으로 표시 */
+      text-overflow: ellipsis;
+    }
+    .sample:nth-of-type(2) .box p{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0; 
+
+    }
+  </style>
+</head>
+<body>
+  <div class="sample">
+    <div class="box">
+      <p>
+        <span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis explicabo quisquam veniam nobis aliquam repellat totam, temporibus voluptatem voluptatum unde aliquid consequatur? Accusamus accusantium similique repudiandae corporis est, commodi ipsum.
+        </span>
+        <span>
+          Accusantium in cupiditate deserunt repellendus, ipsam aperiam consequuntur, ullam quisquam tempora perferendis labore. Quaerat vel quis, alias nobis repudiandae recusandae ea nihil perferendis, minima voluptate nostrum doloremque. Optio, animi beatae?
+        </span>
+      </p>
+      <p>
+        <span>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores saepe quae blanditiis explicabo magnam hic asperiores deserunt quos ratione autem! Quas delectus odio debitis possimus magni numquam officiis ad neque.
+        </span>
+        <span>
+          Quod in quia quibusdam omnis eligendi, debitis hic ea cumque quisquam nihil reiciendis possimus dolorum laboriosam eveniet praesentium alias magnam pariatur voluptatibus consequatur aliquid ad? Quasi itaque optio beatae dicta!
+        </span>
+      </p>
+    </div>
+  </div>
+  <div class="sample">
+    <div class="box">
+      <p>
+        <span>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias molestias perspiciatis esse facilis necessitatibus rerum? Voluptates nemo quos earum quod voluptatum aperiam animi sit, suscipit autem aliquid error facere nisi?
+        </span>
+        <span>
+          Quisquam vero modi iste alias accusamus libero, minima a nisi hic doloribus eius possimus consequuntur dolores? Aliquam praesentium necessitatibus, harum quas debitis quibusdam ex nam sequi vero, iusto deserunt alias!
+        </span>
+      </p>
+      <p>
+        <span>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat cumque reprehenderit provident magnam aut, vel impedit! Laborum id, cum eius dolores nisi possimus. Quaerat aliquam illum omnis enim, commodi magni.
+        </span>
+        <span>
+          Nam animi illo repellendus blanditiis velit amet, iste eligendi sequi aspernatur suscipit adipisci at vel eveniet ea excepturi error. Eveniet, amet rem impedit cumque qui culpa ipsa enim tempore repellendus!
+        </span>
+      </p>
+    </div>
+  </div>
+  <div class="sample2"> 
+    <div class="content-wrap">
+      <!-- 한글은 한 글자 단위로 줄바꿈이 생김 -->
+      <p>
+        얼마나 청춘에서만 청춘 동산에는 그들의 옷을 찾아 말이다. 보이는 없는 이상은 커다란 풍부하게 속에 시들어 위하여 있는가? 기쁘며, 역사를 인간의 못할 그들의 사랑의 뿐이다. 투명하되 일월과 얼마나 우리의 이상의 있는가? 할지라도 간에 바이며, 시들어 말이다. 않는 꽃 가지에 용기가 이상, 앞이 예가 때문이다. 같으며, 못할 만천하의 그들에게 아름답고 거친 위하여서. 내려온 그들의 과실이 군영과 기관과 인간에 못할 인류의 곧 것이다. 미인을 얼마나 현저하게 얼마나 갑 사막이다. 예수는 그들의 주며, 때에, 철환하였는가?
+      </p>
+      <!-- 영문은 단어 단위로 줄바꿈이 생김 -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, suscipit cumque. Deleniti corrupti ipsa non facilis ad laboriosam aliquid esse tenetur sequi.
+      </p>
+    </div>
+  </div>
+  <style>
+    .sample2 {
+      font-family: "pretendard";
+      width: 80%;
+      margin: auto;
+    }
+    .sample2 p{
+      /* 한글도 단어 단위로 줄바꿈 해주고 싶을 때 */
+      word-break: keep-all;
+    }
+  </style>
+</body>
+</html>
