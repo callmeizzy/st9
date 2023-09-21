@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform1-product-list-practice</title>
+  <link rel="stylesheet" href="asset/css/cafe24reset.css">
+  <style>
+    body {
+      font-family: "나눔고딕스퀘어";
+    }
+    .wrap {
+      /* 최대너비 1240px, 상단여백 50px  좌우 auto*/
+      max-width: 1240px;
+      margin-top: 50px auto 0;
+    }
+    .ec-base-product {
+
+    }
+    .ec-base-product .prdList {
+      background-color: #ccc;
+   
+      /* 자식 li에 지정된 float를 인식하기 위함.  */
+      overflow: hidden;
+    }
+    /* 이후 작성되는 요소들이 float에 영향받지 않기 위함 */
+    .ec-base-product .prdList::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .ec-base-product.grid2 > li {
+      width: 50%;
+    } */
+    .ec-base-product.grid3 > li {
+      width: 33.33333%;
+    }
+    .ec-base-product.grid4 > li {
+      /* 4개로 나누고 싶으니깐 */
+      width: 25%;
+    }
+    .ec-base-product.grid5 > li {
+      width: 20%;
+    }
+    .ec-base-product .prdList > li {
+      /* class가 .prdList이기만 하면 됨 */
+      width: 25%;
+      /* .ec-base-product .prdList .description의 기준 조상이 되기 위해서  */
+      position: relative;
+      /* display: inline-block; */
+      /* float가 선언되면 부모가 선언된 요소를 인식하지 못함 
+      > 일반흐름에서 제외됨 = 부모가 자식의 height를 못가져옴 */
+      float: left;
+      box-sizing: border-box;
+      background-color: #a2c1b5;
+      /* 양 쪽 배경색이 적용되는 양쪽 여백 10px */
+      padding: 0 10px;
+    }
+    .ec-base-product .prdList .thumbnail {
+      /* 하단.ec-base-product .prdList > li .icon_box의 기준 조상이 되기 위해서 */
+      position: relative;
+    }
+    .ec-base-product .prdList > li .icon_box {
+      /* 요소와 요소가 겹치는건 무조건 position
+      오전에 배운 abnormal flow : absolute 
+      기준요소 설정*/
+      position: absolute;
+      /* 위치설정 */
+      right: 0px; 
+      top: 0px;
+    }
+    .ec-base-product .prdList > li .icon_box > span {
+      display: block;}
+      
+    /* transform을 위한 css 작성 */
+    .ec-base-product .prdList .description {
+      /* 일반 흐름에서 벗어나기에 기준 조상을 설정해주어야 함 */
+      position: absolute;
+      /* 위치설정 */
+      left: 0px; 
+      bottom: 0px;
+      background-color: rgba(255,255,255,0.5);
+      width: 100%; /*기준 조상으로부터 너비를 가져옵니다*/
+      box-sizing: border-box;
+      padding: 1em;
+    }
+    /* transform 설정 시작 */
+    .ec-base-product .prdList .description {
+      /* 본인 요소만큼 크기만큼 y축으로 이동시키기 */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- .wrap>.ec-base-product>.mainTitle+ul.prdList.grid4>li.xan-record->(div.thumbnail>a>img^.(icon_box>(span.wish>img+span.cart>img))+span.benefit)+.description -->
+  <div class="wrap">
+    <div class="ec-base-product">
+      <div class="mainTitle"></div>
+      <ul class="prdList grid4">
+        <li class="xan-record-">
+          <div class="thumbnail">
+            <a href="">
+              <img src="./background/images/top.jpeg" alt="image">
+            </a>
+            <div class="icon_box">
+              <span class="wish">
+                <img src="./background/images/heart.png" alt="heart">
+              </span>
+              <span class="cart">
+                <img src="./background/images/basket.png" alt="wish">
+              </span>
+            </div>
+            <span class="benefit">
+
+            </span>
+          </div>
+          <div class="description">
+            <!-- div.name+ul.spec>li*2^div.icon -->
+            <div class="name">상품명</div>
+            <ul class="spec">
+              <li>8000원</li>
+              <li>8000원</li>
+            </ul>
+            <div class="icon">아이콘</div>
+          </div>
+        </li>
+
+        <li class="xan-record-">
+          <div class="thumbnail">
+            <a href="">
+              <img src="./background/images/top.jpeg" alt="image">
+            </a>
+            <div class="icon_box">
+              <span class="cart">
+                <img src="./background/images/heart.png" alt="heart">
+              </span>
+              <span class="wish">
+                <img src="./background/images/basket.png" alt="wish">
+              </span>
+            </div>
+            <span class="benefit">
+
+            </span>
+          </div>
+          <div class="description">
+            <!-- div.name+ul.spec>li*2^div.icon -->
+            <div class="name">상품명</div>
+            <ul class="spec">
+              <li>8000원</li>
+              <li>8000원</li>
+            </ul>
+            <div class="icon">아이콘</div>
+          </div>
+        </li>
+        <li class="xan-record-">
+          <div class="thumbnail">
+            <a href="">
+              <img src="./background/images/top.jpeg" alt="image">
+            </a>
+            <div class="icon_box">
+              <span class="cart">
+                <img src="./background/images/heart.png" alt="heart">
+              </span>
+              <span class="wish">
+                <img src="./background/images/basket.png" alt="wish">
+              </span>
+            </div>
+            <span class="benefit">
+
+            </span>
+          </div>
+          <div class="description">
+            <!-- div.name+ul.spec>li*2^div.icon -->
+            <div class="name">상품명</div>
+            <ul class="spec">
+              <li>8000원</li>
+              <li>8000원</li>
+            </ul>
+            <div class="icon">아이콘</div>
+          </div>
+        </li>
+        <li class="xan-record-">
+          <div class="thumbnail">
+            <a href="">
+              <img src="./background/images/top.jpeg" alt="image">
+            </a>
+            <div class="icon_box">
+              <span class="cart">
+                <img src="./background/images/heart.png" alt="heart">
+              </span>
+              <span class="wish">
+                <img src="./background/images/basket.png" alt="wish">
+              </span>
+            </div>
+            <span class="benefit">
+
+            </span>
+          </div>
+          <div class="description">
+            <!-- div.name+ul.spec>li*2^div.icon -->
+            <div class="name">상품명</div>
+            <ul class="spec">
+              <li>8000원</li>
+              <li>8000원</li>
+            </ul>
+            <div class="icon">아이콘</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
