@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position2.html</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: lora;
+    }
+    .wrap {
+      /* 후손(.box3)의 기준 조상이 되기 위해서 지정해줌  */
+      position: relative;
+
+      box-sizing: border-box;
+
+      /*좌표값 100,100으로 지정*/
+      margin: 100px;
+      padding: 100px;
+
+      height: 2000px;
+      
+      border: 10px dotted #5b5a5a;
+      background-color: #ffe390;
+    }
+    .box:nth-child(even) {
+      background-color: #fab7bd;
+    }
+    .box:nth-child(odd) {
+      background-color: #c3fab7;
+    }
+    .box {
+      /* width 지정해주지 않으면 부모의 너비 그대로 계승함 */
+      width: 200px;
+      /* height는 자식의 값을 받아옴 */
+      height: 200px;
+    }
+    .box1 {
+      /* normal flow */
+      position: static;
+      /* static은 left,right,top,bottom값에 영향받지 않음 */
+      left: 100px;
+      top: 100px;
+    }
+    .box2 {
+      /* normal flow 
+        relative의 기쥰 위치: 원래 자신의 위치
+        정상흐름이지만 위치지정이 가능*/
+      position: relative;
+      left: 50px;
+      top: -50px;
+    }
+    .box3 {
+      /* abnormal flow : 일반흐름에서 제외 
+      box3이 box4 위에 떠있어서 box4가 안보이는 것*/
+      position: absolute;
+
+      /* 기준위치 
+      가까운 조상 중 (wrap or body) 
+      position 값이 relative, fixed, absolute가 
+      지정되어 있는 가까운 조상 (기준조상 container box)*/
+      left: 0px;
+      top: 0px;
+      /* 브라우저 맨 위로 올라감 */
+
+      padding: 50px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+    }
+    .box3 .inner {
+      background-color: #fe6868;
+      padding: 16px;
+    }
+    .box3 .inner p {
+      background-color: #76f1ff;
+      
+      /* 일반 흐름에서 제외된다 */
+      position: absolute;
+      
+      /* 위치 지정 가능, 기준위치 확인 */
+      /* left: 0;
+      top: 0px; */
+        /* 요소 안으로 들어오면 +
+           요소 밖으로 나가면 - */
+      right: 20px;
+      bottom: 20px;
+      /* box3가 기준조상이 되어서 위치가 변경됨 */
+    }
+    .box4 {
+      /* abnormal flow : fixed  
+      > disappeared and scrolling
+      위치지정 가능 , 기준위치 :view-port > 브라우저 */
+      position: fixed;
+      left: 200;
+      bottom: 3000;
+    }
+    .box5 {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
+    .box6 {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box box1">
+      <div class="inner">
+        <p>box1</p>
+      </div>
+    </div>
+    <div class="box box2">
+      <div class="inner">
+        <p>box2</p>
+      </div>
+    </div>
+    <div class="box box3">
+      <div class="inner">
+        <p>box3</p>
+      </div>
+    </div>
+    <div class="box box4">
+      <div class="inner">
+        <p>box4</p>
+      </div>
+    </div>
+    <div class="box box5">
+      <div class="inner">
+        <p>box5</p>
+      </div>
+    </div>
+    <div class="box box6">
+      <div class="inner">
+        <p>box6 > 네비게이션 fixed</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

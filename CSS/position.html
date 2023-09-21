@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <style>
+    .box {
+      min-height : 200px;
+      width: 200px;
+    }
+    .box:nth-child(odd) {
+      background-color: #f692a7;
+    }
+    .box:nth-child(even) {
+      background-color: #f4a58f;
+    }
+    .box {
+      left: 0;
+      top: 0;
+    }
+    .box1 {
+      position: static;
+    }
+    .box2 {
+      position: relative;
+    }
+
+    /* normal flow에서 벗어남 > layer 취급*/
+    .box3 {
+      position: absolute; 
+      /*box 4 사라지는 마법의 주문*/
+    }
+    .box4 {
+      position: fixed; 
+      /*box 4가 0,0으로 올라오고 */
+    }
+    .box5 {
+      position: sticky;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box box1">box1</div>
+  <div class="box box2">box2</div>
+  <div class="box box3">box3</div>
+  <div class="box box4">box4</div>
+  <div class="box box5">box5</div>
+  <div class="box box6">box6</div>
+</body>
+</html>
