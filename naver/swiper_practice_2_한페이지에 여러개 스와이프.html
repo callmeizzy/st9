@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper_practice_2_한페이지에 여러개 스와이프</title>
+  <!-- 1. swiper plug-in installation -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- 2. swiper related CSS installation -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+  <!-- CSS순서들의 의미가 있음 
+    내가 작성한 CSS파일 위에 설치해야함 
+     <link rel="stylesheet" href="내가 만든 css 파일
+     *example
+     <link rel="stylesheet" href="/st9/naver/CSS/asset/style.css"
+  -->
+  <style>
+    .swiper {
+    width: 600px;
+    height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3-1. Slider main container -->
+  <div class="swiper myswiper-top">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <!-- 3-2. Slider main container -->
+  <div class="swiper myswiper-mid">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <!-- 4. initialize swiper 
+    스와이퍼 플러그인을 내 요소에 연결-->
+    <!-- 스와이퍼에 연결할 요소에는 유일한 클래스명을 부여해야 함. (다중 슬라이드 사용때문)  -->
+   <!--  .myswiper-top 자리에 연결할 요소의 클래스명 
+    swiper-top과 'myswiper-top'는 unique 값이여야 함 -->
+  <script>
+    const swiper_top = new Swiper('.myswiper-top', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+  // swiper_mid와  '.myswiper-mid'는 유일해야 합니다.
+    const swiper_mid = new Swiper('.myswiper-mid', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
+</body>
+</html>
