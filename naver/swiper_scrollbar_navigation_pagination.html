@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper_scrollbar_navigation_pagination</title>
+  <!-- plug-in 관련 css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <!--  내 css가 plug-in css보다 뒤에 위치해 있어야 함 -->
+  <!-- swiper 크기 지정 -->
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .test1 {
+  width: 600px;
+  /* min-height: 300px; */
+  height: 400px;
+  margin: auto;
+}
+  .test1 .swiper-slide:nth-of-type(even) {
+    background-color: #f36;
+  }
+  .test1 .swiper-slide:nth-of-type(odd) {
+    background-color: #36f;
+  }
+  .test1 .swiper-slide {
+    display: flex;
+    justify-content: center; /* 텍스트 내용 x좌표 가운데로 오게 하기*/
+    align-items: center; /* 텍스트 내용 y좌표 정중앙으로 오게 하기 */
+  }
+  .test1 .swiper-slide img{
+    display: block;
+    width: 100%; /* 무조건 부모의 너비를 따라라*/
+    height: 100%;
+    /* object-fit: contain; media가 가로세로 비율 유지  */
+    object-fit: cover; /* media가 잘려도 상관 없으니 가로세로 비율 유지한 채 꽉 채워서 보여주세요  */
+    /* object-fit: fill; media가 가로세로 비율 상관없이 꽉 채워서 보여주세요  */
+  }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- Slider main container -->
+  <!-- unique한 클래스 명 지정해줘야 함 
+      <div class="swiper test1"> -->
+<div class="swiper test1">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="CSS/image/img_main_slide10.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="CSS/image/img_main_slide11.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="CSS/image/img_main_slide12.jpg" alt=""></div>
+  </div>
+
+  <!-- //.swiper-wrapper의 자식 -->
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+   <!-- If we need scrollbar -->
+   <div class="swiper-scrollbar"></div>
+  
+</div>
+</div>
+  <!-- swiper js plug-in-->
+  <!-- html이 브라우저에서 다 읽힌 후에 swiper를 실행해달라는 뜻 : 이게 meta-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- swiper .test1 연결 
+  const swiper = new Swiper('.swiper', { -->
+  <script>
+    const swiper_test1 = new Swiper('.test1', {
+  // Optional parameters : 매개변수
+  direction: 'horizontal',
+  loop: true,/* 반복 */
+  // autoplay
+  autoplay: {
+    delay: 2500,
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    // type: 'fraction', // bullet 대신 번호로 표기
+    // type: 'progressbar', // bullet 대신 진행 bar로 표기
+  },
+    // Navigation arrows
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+    // And if we need scrollbar
+    scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+  </script>
+
+</body>
+</html>
