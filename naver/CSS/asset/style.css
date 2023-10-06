@@ -1,0 +1,488 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+/* reset */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: 'Nanum Gothic', "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+  font-size: 14px;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th,
+b,
+em {
+  font-weight: normal;
+}
+
+/* selector 
+  : 사용자 지정 속성 
+  = 변수 선언 
+  선택자 {
+    --변수명: 값;
+  }
+  선택자의 후손들은 변수들을 다 상속받아서 사용이 가능하다.
+  ** 사용 
+  선택자 {
+    height:var {
+      변수명
+    }
+*/
+:root {
+  --header-height: 80px;
+  --primary-color:#1ec545;
+  --primary-color-dark:#0fb93c;
+}
+/* 공통 */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+body,
+html {
+  height: 100%;
+  font-style: normal;
+  line-height: 1.4;
+  -webkit-text-size-adjust: none;
+}
+
+.flex-container {
+  display: flex;
+}
+
+
+.flex-direction-column {
+  flex-direction: column;
+}
+.test {
+  background-color: #00f;
+  min-height: 100px;
+}
+
+
+/* header */
+header {
+  position: fixed;
+  width:100%;
+  height: var(--header-height);
+  background-color: rgba(255,255,255,0.3);
+  border: 0px none #000; /*test*/
+}
+/* 햄버거 메뉴을 클릭하면 headerdp .active 추가 */
+header.active {
+  background-color: var(--primary-color);
+}
+
+.header_wrap {
+  max-width: 1440px;
+  margin:0 auto;
+  /*  display: flex; flex-container선언 */
+  justify-content: space-between;
+  align-items: center; 
+  height: 100%;
+}
+
+/* .header_wrap .header_logo,
+.header_wrap nav,
+.header_wrap .header_util{
+  flex:none;
+} */
+.header_wrap .header_logo a {
+  display: block;
+  width:90px; height: 20px;
+  background:url(../image/header_logo.png) no-repeat 50% 50%;
+}
+/* 햄버거 메뉴를 누르면 로고색상을 흰색으로 변경해줌 */
+header.active .header_wrap .header_logo a {
+  display: block;
+  width:90px; 
+  height: 20px;
+  background:url(../image/header_logo_v2.png) no-repeat 50% 50%;
+}
+.header_wrap nav {
+  height: var(--header-height);
+  /* height: 80px; */
+}
+header.active .header_wrap nav {
+  display: none;
+}
+
+nav .gnb_menu {
+  /* nav .gnb_menu li.gnb_menu_list의 display를 
+    inline-block으로 변경해주었기 때문에 
+  */
+  font-size: 0;
+}
+
+nav .gnb_menu li.gnb_menu_list,
+nav .gnb_menu li.gnb_menu_list_recruit {
+  /* li를 수평으로 나란히 노출되도록 
+    1. display : flex
+    2. float 
+    3. display : inline / inline-block 
+  */
+  display : inline-block;
+}
+nav .gnb_menu a.gnb_menu_item {
+  /* a태그는 수직 여백이 적용되지 않기 때문에 지정해준다 */
+  display: block;
+
+  /* 
+    nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before
+    의 기준조상 
+  */
+  position: relative;
+  
+  font-size: 15px;
+  line-height: var(--header-height);
+  margin: 0 30px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* no hovered */
+nav .gnb_menu .gnb_menu_list a.gnb_menu_item::before {
+content: '';
+position: absolute;
+display: block;
+left: 0;
+bottom: 1em;
+width: 100%;
+height: 2px;
+background-color: var(--primary-color);
+transform: scaleX(0);
+transition: 0.2s;
+transform-origin: 100% 0;
+}
+
+/* hovered */
+nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before {
+  /*
+  메뉴 밑 mouseover시 밑에 바 그리기 
+  */
+  /*
+  mouse over 요소와 속성을 지정하는 요소가 직계 관계이던지 후손 관계이던지
+  mouse over 요소 > 속성을 지정하는 요소
+  mouse over 요소 : .gnb_menu .gnb_menu_list
+  속성을 지정하는 요소 : a.gnb_menu_item
+  */
+  transform: scaleX(1);
+  transition: transform 0.2s;
+  transform-origin: 0 0;
+  
+}
+/* 
+  li 마우스 오버 시 ul.gnb_dropMenu_wrap 표시하기 위해
+  display: none;과 
+  display: flex;로 화면표시 제어해줄것 
+*/
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap {
+  /* depth 2 d1 마우스엔터 시 드롭다운 되는 메뉴
+  */
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background-color: var(--primary-color);
+  display: none; /*for test, test 후 flex로 처리*/
+  /* .gnb_dropMenu_wrap > li를 수평으로 오게하기 위해 */
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+/* 1번 메뉴 출력을 위한 테스트 선택자 */
+/* nav .gnb_menu .gnb_menu_list:nth-child(1) 1~7번으로 확인하면서 체크 */
+nav .gnb_menu .gnb_menu_list:nth-child(1) ul.gnb_dropMenu_wrap {
+  /*.gnb_dropMenu_wrap > li를 수평으로 오게하기 위해
+   display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;*/
+}
+
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li {
+  /* nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li::before의 기준조상 */
+  position: relative;
+
+  font-size: 14px;
+  width: 190px;
+  height: 367px;
+  padding: 28px 0 0;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li:last-child::after {
+  background-color: rgba(255, 255, 255, 0.2);
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li:hover {
+  background-color: var(--primary-color-dark);
+
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu {
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu > li {
+  margin: 0 0 7px;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu .depth_blank {
+  margin-bottom: 14px;
+}
+nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu>li {
+  margin-bottom: 7px;
+  padding-left: 20px;
+}
+
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item {
+  color: white;
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item strong span {
+  opacity: 1;
+  font-weight: bold;
+}
+
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .gnb_dropMenu_item span{
+  opacity: 0.8;
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify {
+  margin-bottom: 20px;
+  border-top: 1px solid rgb(255, 255, 255, 0.5);
+  padding-top: 20px;
+}
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child {
+  padding-top: 0;
+  border-top: 0 none;
+}
+
+/* <div class="header_util item">
+    <div class="header_lang">
+      <a href="/" aria-selected="true">KOR</a>
+      <a href="/en" aria-selected="false">ENG</a>
+    </div>
+    <div class="sitemap_box"></div>
+   </div> 
+*/
+.header_util { 
+   /* 
+   .header_util .sitemap_box
+   .header_util .sitemap_box .btn_line
+   수평으로 만들기 위해
+  */
+  display: flex;
+}
+.header_util .header_lang {  
+  margin-right: 2em;
+}
+.header_util .header_lang a {
+  color: #000;
+  font-size: 12px;
+  padding: 0 0.5em;
+  position: relative;
+}
+header.active .header_util .header_lang a {
+  color: #ffffff;
+}
+.header_util .header_lang a:first-child::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  right: -3px; /*요소 바깥쪽으로 나가렴*/
+  top: 0;
+}
+header.active .header_util .header_lang a:first-child::after {
+  background-color: #ffffff;
+}
+.header_util .header_lang a[aria-selected="false"] {
+  opacity: 0.5;
+}
+/* <div class="header_util item">
+    <div class="header_lang"></div>
+    <div class="sitemap_box">
+      <span class="blind">사이트맵 열고 닫기</span>
+            <span class="btn_line"></span>
+            <span class="btn_line"></span>
+            <span class="btn_line"></span>
+    </div> 
+*/
+.header_util .sitemap_box {
+  /* .header_util .sitemap_box .btn_line 기준조상 */
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.header_util .sitemap_box .btn_sitemap {
+   width: 100%;
+   height: 100%;
+   background-color: transparent;
+   border: 0px none #f00; /* for test*/
+   cursor: pointer; /* 마우스 포인터 변경*/
+}
+.header_util .sitemap_box .btn_line {
+  position: absolute;
+  right: 0;
+  display: block; /*밑줄이 생기는 작업*/
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.2s; /* 수정 */
+}
+.header_util .sitemap_box:hover .btn_line {
+  background-color: var(--primary-color);
+}
+
+.header_util .sitemap_box .btn_line:nth-of-type(2) {
+  top: 2px;
+  /* width:calc(24px - 4px); */
+}
+.header_util .sitemap_box .btn_line:nth-of-type(3) {
+  top: 10px;
+  /* width:calc(24px - 4px); */
+}
+.header_util .sitemap_box .btn_line:nth-of-type(4) {
+  top: 18px;
+}
+
+/* 
+사용자가 햄버거 메뉴를 클릭한 상태
+header.active
+*/
+header.active .header_util .sitemap_box .btn_line {
+  background-color: #fff; /* 클릭 시 하얀색으로 변경*/
+  transition: all 0.2s; /* 수정 */
+}
+/* 클릭 시 햄버거 메뉴를 x자로 교차한 상태로 변경해주기 */
+header.active .header_util .sitemap_box .btn_line:nth-of-type(2) {
+  transform: rotate(-45deg) translate(-8px, 8px) ;
+}
+header.active .header_util .sitemap_box .btn_line:nth-of-type(3) {
+  opacity: 0;
+}
+header.active .header_util .sitemap_box .btn_line:nth-of-type(4) {
+  transform: rotate(45deg) translate(-3px, -4px);
+}
+
+/* <div class="sitemap">
+    <div class="box"></div>
+  </div> 
+*/
+header .sitemap {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--primary-color)
+}
+header.active .sitemap {
+  display: block;
+}
+header .sitemap .box {}
+
+/* .container */
+.container {
+  padding:80px 0 160px;
+  background-color: #ccc;/*테스트용*/
+}

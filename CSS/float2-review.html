@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>float2-review</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    /* layout */
+    /* header layout */
+    header {
+      border: 1px solid #000;
+      padding: 20px;
+      background-color: #e8f4b4;
+    }
+    /* container layout */
+    .container {
+      width: 90%;
+      min-width: 1400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .container .con {
+      font-weight: normal;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      min-height: 400px;
+    }
+    .container .side-menu {
+      background-color: #8effee;
+      width: 20%;
+      max-width: 280px;
+      float: left;
+    }
+    .container .content {
+      background-color: #ee99e9;
+      width: 50%;
+      max-width: 700px;
+      float: left;
+    }
+    .container .right-aside {
+      background-color: #f2fd63;
+      width: 30%;
+      max-width: 420px;
+      float: left;
+    }
+    footer {
+      border: 1px solid #000;
+      padding: 20px;
+      background-color: #b4bdf4;
+    }
+    </style>
+</head>
+<body>
+  <!-- .wrap>header>{header}^.container>.side-menu+.content+.right-aside^footer>{footer} -->
+  <div class="wrap">
+    <header>
+      header
+    </header>
+    <div class="container">
+      <div class="side-menu con">
+        side-menu
+      </div>
+      <div class="content con">
+        content
+      </div>
+      <div class="right-aside con">
+        aside
+      </div>
+    </div>
+    <footer>
+      footer
+    </footer>
+  </div>
+</body>
+</html>

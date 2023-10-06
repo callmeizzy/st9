@@ -37,7 +37,7 @@
     .container::after {
       content: '';
       display: block;
-      float : clear;
+      clear: both;
     }
     /* .container 전체 자식 layout */
     .container .col {
@@ -49,20 +49,20 @@
     /* .container > .side-menu layout  */
     .side-menu {
       width: 20%;
-      max-width: 250px;
+      max-width: 280px;
       float: left;
     }
     /* .container > .content layout */
     .content {
       width: 60%;
-      min-width: 8400px;
+      max-width: 840px;
       /* 부모 1400 - 형제 500 = 나머지 900 할당 */
       float: left;
     }
     /*  .container > .right-side layout */
     .right-aside {
       width: 20%;
-      max-width: 250px;
+      max-width: 280px;
       float: left;
     }
     /* footer layout */
