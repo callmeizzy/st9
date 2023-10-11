@@ -112,6 +112,8 @@ em {
   --header-height: 80px;
   --primary-color:#1ec545;
   --primary-color-dark:#0fb93c;
+  --padding-h-pc: 150px;
+  --padding-h-m: 55px;
 }
 /* 공통 */
 .blind {
@@ -136,7 +138,6 @@ html {
   display: flex;
 }
 
-
 .flex-direction-column {
   flex-direction: column;
 }
@@ -145,17 +146,16 @@ html {
   min-height: 100px;
 }
 
-
 /* header */
 header {
   position: fixed;
   width:100%;
   height: var(--header-height);
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.8); /*a값 0.3 -> 0.8로 수정*/ 
   border: 0px none #000; /*test*/
   z-index: 100; /*swiper 보다 우선순위가 되어야 함 (서브메뉴가 더 위에ㅜㅜ)*/
 }
-/* 햄버거 메뉴을 클릭하면 headerdp .active 추가 */
+/* 햄버거 메뉴을 클릭하면 header에 .active 추가 */
 header.active {
   background-color: var(--primary-color);
 }
@@ -336,7 +336,6 @@ nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li::before {
 }
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap > li:hover {
   background-color: var(--primary-color-dark);
-
 }
 nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu {
 }
@@ -499,11 +498,11 @@ header.active .sitemap {
   display: block;
 }
 header .sitemap .box {}
-
+/* 채용 ::after에 아이콘 삽입하기 **homework */
 /* .container */
 .container {
   padding:80px 0 160px;
-  background-color: #ccc; /* for test*/
+  /* background-color: #ccc; for test */
 }
 
 .main_slide {
@@ -585,7 +584,7 @@ header .sitemap .box {}
     color: white;
     font-size: 0;
   }
-  .main_slide .swiper-pagination-fraction .swiper-pagination-current{
+  .main_slide .swiper-pagination-fraction .swiper-pagination-current {
   font-size: 12px;
   padding-right: 0.5em;
 }
@@ -593,7 +592,7 @@ header .sitemap .box {}
   content: '|';
   padding-left: 0.5em;
 }
-.main_slide .swiper-pagination-fraction .swiper-pagination-total{
+.main_slide .swiper-pagination-fraction .swiper-pagination-total {
   font-size: 12px;
   opacity: 0.7;
 }
@@ -661,12 +660,18 @@ header .sitemap .box {}
   position: absolute;
   left: 0;
   bottom: 150px;
-  padding: 0 150px;
+  padding: 0 var(--padding-h-pc);
 }
-.main_slide .slide-info .slide_text_box .slide_title {
+.main_slide .slide-info .slide_text_box .slide_title strong {
+  display: block; /* stong block*/
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+               /* 3px 3px 2px rgba(0, 255, 0, 0.8),
+               5px 5px 2px rgba(0, 0, 255, 0.8),
+               7px 7px 2px rgba(255, 0, 0, 0.8); */
+               /* 색깔이 여러개인 글자처럼 보일 수 있음 */
 }
 .main_slide .slide-info .slide_text_box .slide_text {
   font-size: 15px;
@@ -674,7 +679,7 @@ header .sitemap .box {}
 }
 @media (max-width: 768px) {
   .main_slide .slide-info .slide_text_box {
-    padding: 0 50px 0px;
+    padding: 0 var(--padding-h-m) 0px;
   }
   .main_slide .slide-info .slide_text_box .slide_title {
     font-size: 2em;
@@ -684,5 +689,119 @@ header .sitemap .box {}
     display: none;
   }
 }
+/* .main_content css 시작*/
+div.main_content {
+  padding: 120px var(--padding-h-pc);
+}
+@media (max-width: 768px) {
+  .main_content {
+    padding: 120px var(--padding-h-m);
+  }
+}
+.main_content ul.content_summary {
+  /* display: flex; li의 부모 ul한테
+     display: inline-block;
+     float:
+  */
+  display: flex;
+  /* 아래 3개는 flex의 기본값
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+  */
+}
+ul.content_summary li.summary_container {
+  /* .content_summary .summary_container:after의 기준요소 */
+  position: relative;
 
-/* 채용 ::after에 아이콘 삽입하기 **homework */
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 25%;
+  /* flex-basis: auto 하고 width지정 */
+  padding: 0 50px;
+  /* border: 1px solid #000; for test */
+}
+.content_summary .summary_container:first-child {
+  /* 가장 왼쪽 컨텐츠 옆 여백 없애기 */
+  padding-left: 0;
+  /* 
+    첫 컨텐츠만 너비가 살짝 넓어서
+    전체 너비 1/4 + 50px 
+  */
+  width: calc(25% + 50px);
+}
+.content_summary .summary_container:last-child {
+    /* 
+    첫 컨텐츠 너비 +50px
+  */
+  width: calc(25% - 50px);
+}
+.content_summary .summary_container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 100%; /*부모높이 따름*/
+  background-color: #efefef;
+  right: 0;
+  top: 0;
+}
+.content_summary .summary_container:last-child::after {
+  /* 뒤에 막대 없애기 */
+  /* content:''; */
+  display: none;
+}
+.content_summary .summary_title {
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase; /*입력된 값과 상관 없이 대문자로 표시*/
+  margin-bottom: 30px;
+}
+.content_summary .desc_box {}
+.content_summary a.summary_link {
+  position: absolute;
+  /* left: auto; */
+  bottom: 0;
+  padding-right: 40px;
+  color: #000;
+  font-weight: bold;
+}
+.content_summary a.summary_link span {}
+.content_summary a.summary_link span.icon_arrow{
+  /* :after에 arrow 삽입과 동일  */
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  /* 동그라미에 빨간색 채우기 
+    background-color: #f00; fot test 
+  */
+}
+.content_summary a.summary_link span.icon_arrow::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  /* 요소를 맨 가운데에 넣기 */
+  transform: translate(-50%, -50%);
+
+  width: 5px;
+  height: 8px;
+    /* 동그라미에 아이콘 이미지 삽입 */
+    background: url(../image/sprite.png) no-repeat;
+    background-position: -102px -50px;
+}
+.content_summary a.summary_link:hover {
+  text-decoration: underline;
+}
+.content_summary a.summary_link:hover span.icon_arrow {
+  background-color: var(--primary-color);
+}
+.content_summary a.summary_link:hover span.icon_arrow::after {
+  background-position: -108px -49px;
+}
