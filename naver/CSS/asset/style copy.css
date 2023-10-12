@@ -246,9 +246,7 @@ nav .gnb_menu a.gnb_menu_item {
 }
 
 /* no hovered */
-nav .gnb_menu .gnb_menu_list a.gnb_menu_item::before,
-nav .gnb_menu .gnb_menu_list_recruit a.gnb_menu_item::before{
-  /* nav .gnb_menu .gnb_menu_list_recruit a.gnb_menu_item::before 추가 */
+nav .gnb_menu .gnb_menu_list a.gnb_menu_item::before {
 content: '';
 position: absolute;
 display: block;
@@ -261,10 +259,9 @@ transform: scaleX(0);
 transition: 0.2s;
 transform-origin: 100% 0;
 }
+
 /* hovered */
-nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before, 
-nav .gnb_menu .gnb_menu_list_recruit:hover a.gnb_menu_item::before {
-  /* nav .gnb_menu .gnb_menu_list_recruit:hover a.gnb_menu_item::before 추가 */
+nav .gnb_menu .gnb_menu_list:hover a.gnb_menu_item::before {
   /*
   메뉴 밑 mouseover시 밑에 바 그리기 
   */
@@ -278,13 +275,6 @@ nav .gnb_menu .gnb_menu_list_recruit:hover a.gnb_menu_item::before {
   transition: transform 0.2s;
   transform-origin: 0 0;
   
-}
-/* 채용 ::after에 아이콘 삽입하기 **homework */
-nav .gnb_menu .gnb_menu_list_recruit:hover a.gnb_menu_item::after {
-  /* 메뉴 밑 mouseover시 아이콘 노출*/
-  background-image: url(../image/sprite.png);
-  background-position: -150px -150px;
-  border-radius: 20px;
 }
 /* 
   li 마우스 오버 시 ul.gnb_dropMenu_wrap 표시하기 위해
@@ -508,6 +498,7 @@ header.active .sitemap {
   display: block;
 }
 header .sitemap .box {}
+/* 채용 ::after에 아이콘 삽입하기 **homework */
 /* .container */
 .container {
   padding:80px 0 160px;
@@ -699,10 +690,10 @@ header .sitemap .box {}
   }
 }
 /* .main_content css 시작*/
-.main_content {
+div.main_content {
   padding: 120px var(--padding-h-pc);
 }
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .main_content {
     padding: 120px var(--padding-h-m);
   }
@@ -718,9 +709,8 @@ header .sitemap .box {}
     justify-content: flex-start;
     align-items: stretch;
   */
-  flex-wrap: wrap; /*추가 미디어 쿼리를 위해서*/
 }
-.content_summary li.summary_container {
+ul.content_summary li.summary_container {
   /* .content_summary .summary_container:after의 기준요소 */
   position: relative;
 
@@ -732,8 +722,7 @@ header .sitemap .box {}
   padding: 0 50px;
   /* border: 1px solid #000; for test */
 }
-
-.content_summary li.summary_container:first-child {
+.content_summary .summary_container:first-child {
   /* 가장 왼쪽 컨텐츠 옆 여백 없애기 */
   padding-left: 0;
   /* 
@@ -742,14 +731,13 @@ header .sitemap .box {}
   */
   width: calc(25% + 50px);
 }
-.content_summary li.summary_container:last-child {
+.content_summary .summary_container:last-child {
     /* 
     첫 컨텐츠 너비 +50px
   */
   width: calc(25% - 50px);
 }
-
-.content_summary li.summary_container::after {
+.content_summary .summary_container::after {
   content: '';
   display: block;
   position: absolute;
@@ -759,157 +747,23 @@ header .sitemap .box {}
   right: 0;
   top: 0;
 }
-.content_summary li.summary_container:last-child::after {
+.content_summary .summary_container:last-child::after {
   /* 뒤에 막대 없애기 */
   /* content:''; */
   display: none;
 }
-/* 992px이하의 li.summary_container 화면 설정 (4단 > 2단)*/
-@media (max-width: 992px) {
-  .main_content {
-    padding-top: 150px;
-  }
-  /*  모바일 사이즈 일 때 4단 > 2단으로 변경 */
-  .content_summary li.summary_container {
-    width: 50%;
-    margin-bottom: 100px;
-  }
-  .content_summary li.summary_container:first-child {
-    width: 50%; 
-  }
-  .content_summary li.summary_container:last-child {
-    width: 50%; 
-  }
-  /*두번째 summary 선 없애기*/
-  .content_summary li.summary_container:nth-child(2)::after {
-    display: none; 
-  }
-  /* 3번째 자식의 왼쪽 패딩 없애기 */
-  .content_summary li.summary_container:nth-child(3) {
-    padding-left: 0;
-  }
-}
-/*@media (max-width:992px)*/
-@media (max-width:768px) {
-  /* 1단 */
-  .content_summary li.summary_container {
-    width: 100%;
-    padding: 0;
-  }
-  .content_summary li.summary_container::after {
-    display: none;
-
-  }
-  .content_summary li.summary_container:first-child {
-      width: 100%; 
-  }
-  .content_summary li.summary_container:last-child {
-      width: 100%; 
-  }
-  }
-  /*@media (max-width:768px)*/
 .content_summary .summary_title {
   font-size: 14px;
   font-weight: 900;
   text-transform: uppercase; /*입력된 값과 상관 없이 대문자로 표시*/
   margin-bottom: 30px;
 }
-/* news */
-.content_summary .desc_box {
-  margin-bottom: 40px;
-}
-/* 족보 - 참고용
-.content_summary .desc_box .news_box {}
-.content_summary .news_box a {} 
-*/
-.content_summary .news_box .news_title {
-  color: #000;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 1em; /* 1글자 여백*/
-  /* 말줄임 표시 css들 */
-  display: block; /*말줄임 + 수직여백*/
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.content_summary .news_box .news_text {
-  color: #666;
-  font-size: 15px;
-  /* 여러 줄 말줄임 표시 css */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /*2줄까지 쓰겠음*/
-  overflow: hidden;
-}
-/* //news */
-.content_summary .desc_box .career_text {
-  font-size: 18px;
-  font-weight: bold;
-    /* 여러 줄 말줄임 표시 css */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /*3줄까지 쓰겠음*/
-    overflow: hidden;
-}
-/* //career */
-/* stock */
-.content_summary .desc_box .summary_stock {}
-.content_summary .summary_stock .stock_info_box{}
-.content_summary .summary_stock .stock_info_box .stock_price_box {
-  /* .stock_price_box의 자식요소 (.price & .figure)의 float을 초기화 해줌 */
-  overflow: hidden;
-  /* .content_summary .summary_stock .stock_info_box .stock_price_box::after의 기준요소 */
-  position: relative;
-  /* .stock_price_box::after와 여백  */
-  padding-bottom: 10px;
-  /* .date와 여백 */
-  margin-bottom: 10px;
-}
-.content_summary .summary_stock .stock_info_box .stock_price_box::after{
-/* .float-parent::after {
-    content: '';
-    display: inline-block;
-    clear: both;
-    } 
-*/
-  content: '';
-  display: inline-block;
-  clear: both;
-/* 언더라인 그리기 */
-    position: absolute;
-    left: 0;  
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #000000;
-}
-.content_summary .stock_info_box .stock_price_box p.price{
-  font-size: 36px;
-  font-weight: bold;
-  float: left
-}
-.content_summary .stock_info_box .stock_price_box .price .unit{
-  font-size: 12px;
-  color: #666;
-  margin-left: -3px;/*'원"을 숫자 옆에 뽀짝 붙이기*/
-}
-.content_summary .stock_info_box .stock_price_box span.figure::before {
-  /* 삼각형 이미지 삽입 */
-  background-image: url(../image/sprite.png) no-repeat;
-}
-.content_summary .stock_info_box .stock_price_box .figure {
-  float: right;
-  display: block;
-  margin-top: 22px; /* 높이 조절*/
+.content_summary .desc_box {}
 
-}
-.content_summary .stock_info_box p.date{
-  color: #ccc;
-  font-size: 12px;
-  text-align: right; /*오른쪽으로 뽀짝 붙이기*/
-}
-/* //stock */
+
+
+
+
 .content_summary a.summary_link {
   position: absolute;
   /* left: auto; */
