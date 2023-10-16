@@ -134,16 +134,41 @@ html {
   line-height: 1.4;
   -webkit-text-size-adjust: none;
 }
-
-.flex-container{
+.flex-container {
   display: flex;
 }
-
-
 .flex-direction-column{
   flex-direction: column;
 }
 
+.text_line,
+.text_line-rt,
+.text_line-rm {
+  display: block;
+ }
+
+ .text_block-rt,
+ .text_block-rm {
+  display: inline;
+ }
+
+
+@media (max-width: 768px) {
+ .text_line-rt {
+  display: inline !important;
+ }
+ .text_block-rt {
+  display: block !important;
+ }
+}
+@media (max-width: 576px) {
+ .text_line-rm {
+  display: inline !important;
+ }
+ .text_block-rm {
+  display: block !important; 
+  }
+}
 /* 
 .item{
   
@@ -920,13 +945,34 @@ header.active .sitemap{
   /* 주축의 방향 지정 */
   width: 33.333%;
 
-  /* .content_service .service_thumbnail_box .description의 기준조상 */
+  /* .content_service .service_thumbnail_box .description와 
+    .content_service ul.service_list_container li.service_thumbnail_box::after
+    의 기준조상 
+  */
   position: relative;
 
   /* 자식(description)들 텍스트 안보이게 하기 */
   overflow: hidden;
 }
+.content_service ul.service_list_container li.service_thumbnail_box::after{
+  /* mousehover시 overlay color씌우기 */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#3a3737;
+  opacity: 0;
+  transition: all 0.1s;
+}
+.content_service ul.service_list_container li.service_thumbnail_box:hover::after{
+   opacity: 0.5;
+   transition: all 0.3s;
+   /* hover  */
+}
 .content_service .service_thumbnail_box .thumbnail{
+
 }
 .content_service .service_thumbnail_box .thumbnail a {
   display: block;
@@ -935,6 +981,7 @@ header.active .sitemap{
   display: block;
   width: 100%;
 }
+
 .content_service .service_thumbnail_box .description{
   position: absolute;
   left: 0; 
@@ -949,7 +996,11 @@ header.active .sitemap{
   padding-top: 50px;
   padding-left: 30px;
   padding-bottom: 2em;
-  /* background-color: rgba(0, 0, 0, 0.5);for test  , 전체 배경 씌우는거 before and after로 명일 작업예정. 231012*/
+  /* background-color: rgba(0, 0, 0, 0.5); 전체 배경 씌우는거 before and after로 명일 작업예정. 231012*/
+
+  /* .content_service ul.service_list_container li.service_thumbnail_box::after보다 
+    더 상위레이어로 만들기 위함. 단 header보단 값이 작아야 함 */
+  z-index: 20;
 }
 
 .content_service ul.service_list_container li.service_thumbnail_box:hover .description {
@@ -973,3 +1024,94 @@ header.active .sitemap{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+  /* 콘텐츠 섹션 모바일 화면 작업 시작 */
+@media (max-width: 1024px) {
+  .content_service ul.service_list_container {
+    gap: 20px;
+  }
+  .content_service ul.service_list_container li {
+    /* 썸네일 + 디스크립션을 포함하는 부모의 테두리를 둥글게 해야 함 */
+    border-radius: 10px 10px 0 0 ;
+    overflow: hidden;
+  }
+  .content_service ul.service_list_container li.service_thumbnail_box {
+    width: calc(50% - 10px );
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px 3px rgba(80, 80, 80, 0.2);
+  }
+  .content_service ul.service_list_container li.service_thumbnail_box:hover::after {
+    /* 모바일 화면에선 오버레이 노출 안되도록 */
+    display: none;
+  }
+  /* 썸네일 하단 텍스트도 출력되도록 입력해주기 */
+  .content_service .service_thumbnail_box .description {
+    /* 일반 흐름에 포함해주어야 함. 
+    이유 - li(부모) .description 요소의 높이를 인식 */
+    position: static;
+    transform: translateY(0);
+    padding: 1em;
+
+    /* 카드뉴스 느낌
+      border: 1px solid #ccc;
+      border-top: 0; 
+    */
+
+    /*텍스트 배경 입히기
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    */
+  }
+  .content_service .service_thumbnail_box .description dl {
+    color: black;
+  }
+  .content_service ul.service_list_container li.service_thumbnail_box:hover .description {
+  }
+}
+  @media (max-width: 576px) {
+    .content_service ul.service_list_container {
+      gap: 30px; /* gap: 0; 콘텐츠들 딱 붙게 하는 것 */
+    }
+    .content_service ul.service_list_container li.service_thumbnail_box {
+      width: 100%;
+    }
+    /* 나머지 안쓰는 이유? - 1024px의 css값을 그대로 계승하니깐 적어줄 필요가 없음. 변경되는 내용만 적어주면 됨 */
+  }
+  /* //콘텐츠 섹션 모바일 화면 작업 끝 */
+
+/* .content_support */
+.content_support {
+  padding-top: 120px;
+  text-align: center;
+}
+.content_support .support_info_top {
+  text-align: center;
+  margin-bottom: 134px;
+}
+.content_support .support_info_top .support_title{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+}
+.content_support .support_info_top .support_text{
+  font-size: 18px;
+  line-height: 1.6;
+}
+/* ul.support_list_container */
+  .content_support ul.support_list_container {
+    display: flex;
+  }
+  .content_support .support_list_container li.support_list_box {
+    /* .support_list 나란히 표시하기 위함 */
+    flex: none;
+    width: 25%;
+
+    border: 1px solid #000;
+  }
+  .content_support .support_list_container .support_list_box {}
+  .content_support .support_list_box dl {}
+  .content_support .support_list_box dd {}
+  .content_support .support_list_box dt {}
+
+/* //ul.support_list_container */
+/* //.content_support */

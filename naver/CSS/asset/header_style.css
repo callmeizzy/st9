@@ -299,12 +299,12 @@ nav .gnb_menu .gnb_menu_list ul.gnb_dropMenu_wrap li .gnb_dropMenu > li {
 nav ul.gnb_dropMenu_wrap li .gnb_dropMenu a.gnb_dropMenu_item {
   color: #fff;
 }
-nav ul.gnb_dropMenu_wrap li .gnb_dropMenu a.gnb_dropMenu_item strong span{
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu a.gnb_dropMenu_item strong span {
   opacity: 1;
   color: #fff;
   font-weight: bold;
 }
-nav ul.gnb_dropMenu_wrap li .gnb_dropMenu a.gnb_dropMenu_item span{
+nav ul.gnb_dropMenu_wrap li .gnb_dropMenu a.gnb_dropMenu_item span {
   opacity: 0.6;
 }
 /* //.header_wrap nav 끝 */
