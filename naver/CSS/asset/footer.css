@@ -145,13 +145,20 @@ html {
 .text_line-rt,
 .text_line-rm {
   display: block;
+
+  /* 한 줄일 경우 단어 단위로 줄 바꿈처리 */
+  word-break: keep-all; 
  }
 
  .text_block-rt,
  .text_block-rm {
   display: inline;
  }
-
+@media (max-width: 1400px) {
+  .text_line {
+    display: inline;
+  }
+}
 
 @media (max-width: 768px) {
  .text_line-rt {
@@ -181,8 +188,17 @@ html {
   background-color: #00f;
   min-height: 100px;
 }
+/* layout */
+/* #wrap */
+#wrap {
+  position: relative;
+  min-height: 100%
+}
+/* //#wrap 끝 */
 
-
+/* 
+main page 시작
+*/
 /* header */
 header{
   position: fixed;
@@ -681,11 +697,11 @@ header.active .sitemap{
   font-size: 40px;
   font-weight: bold;
   margin-bottom:2em;
-  text-shadow: 
+  /* text-shadow: 
     1px 1px 2px rgba(255,0,0,0.8),
     3px 3px 2px rgba(0,255,0,0.8),
     5px 5px 2px rgba(0,0,255,0.8),
-    7px 7px 2px rgba(255,0,0,0.8);
+    7px 7px 2px rgba(255,0,0,0.8); */
 }
 .main_slide .slide-info .slide_text_box .slide_text{
   font-size: 15px;
@@ -1082,36 +1098,210 @@ header.active .sitemap{
 /* .content_support */
 .content_support {
   padding-top: 120px;
-  text-align: center;
 }
 .content_support .support_info_top {
   text-align: center;
-  margin-bottom: 134px;
+  margin-bottom: 60px;
 }
 .content_support .support_info_top .support_title{
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 0.8em;
+  margin-bottom: 17px;
 }
 .content_support .support_info_top .support_text{
   font-size: 18px;
   line-height: 1.6;
+
+  /* 단어 단위로 줄바꿈 */
+  word-break: keep-all;
 }
 /* ul.support_list_container */
   .content_support ul.support_list_container {
     display: flex;
+    padding-bottom: 50px;
+  }
+  .content_support .support_list_container li {
+    /*   .content_support .support_list_container li.support_list_box::after 기준조상 */
+    position: relative;
   }
   .content_support .support_list_container li.support_list_box {
     /* .support_list 나란히 표시하기 위함 */
     flex: none;
     width: 25%;
-
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
   }
-  .content_support .support_list_container .support_list_box {}
-  .content_support .support_list_box dl {}
-  .content_support .support_list_box dd {}
-  .content_support .support_list_box dt {}
+   /* 옆에 세로줄 넣기 */
+  .content_support .support_list_container li.support_list_box::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #efefef;
+    }
+   /* // 옆에 세로줄 넣기 끝 */
+   /* 옆에 세로줄 없애기 */
+    .content_support .support_list_container li.support_list_box:last-child::after {
+    display: none;
+    }
+   /* //옆에 세로줄 없애기 끝 */
 
+  .content_support .support_list_box a {
+    /*   .content_support .support_list_box a::after의 기준조상 */
+    position: relative;
+    display: block;
+    padding: 135px 10px 0;
+    text-align: center;
+  }
+  /* background-position 사용하여 아이콘 넣기 */
+  .content_support .support_list_box a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100px;
+    transform: translate(-50%, 0%); /* 요소의 크가랑 상관없이 가운데에 위치하고 싶을 때*/
+
+    background-image: url(../image/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 0 -957px;
+    /* border: 1px solid #000; */
+  }
+  .content_support .support_list_box a.creators::after {
+    width: 87px;
+    background-position: 0 -957px;
+  }
+  .content_support .support_list_box a.business::after {
+    width: 101px;
+    background-position: -92px -957px;
+  }
+  .content_support .support_list_box a.developers::after {
+    width: 110px;
+    background-position: -199px -957px;
+  }
+  .content_support .support_list_box a.flower::after {
+    width: 93px;
+    background-position: -316px -957px;
+  }
+  /* // background-position 사용하여 아이콘 넣기 끝*/
+
+  .content_support .support_list_box a dl {
+  }
+  .content_support .support_list_box dl dt {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1.5em;
+  }
+  .content_support .support_list_box:hover dt{
+    text-decoration: underline;
+  }
+  .content_support .support_list_box dl dd {
+    font-size: 15px;
+    color: #999;
+    /* 단어단위로 줄바꿈 */
+    word-break: keep-all;
+  }
+  /* @media (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    /* easy 스킨을 사용하는 모바일 환경에서 수평으로 표시되며 스크롤 처리를 해줌  */
+    .content_support ul.support_list_container {
+      min-width: 400px;
+      /* 선수조건 > scroll이 생기게 해주어야 함*/
+      overflow-x: auto; /* 부모의 너비보다 넓으면 x축에만 scroll */
+      /* scroll시 동작 설정 */
+      scroll-snap-type: x mandatory;
+      /* 자식요소에 설정 필수 > scroll-snap-align: start | center | end; */
+    }
+    .content_support ul.support_list_container::-webkit-scrollbar {
+      /* 스크롤바 없애기 > display: none;*/
+      display: none;
+
+      /* 스크롤바 꾸미기 */
+      /* width: 100%;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.3);
+       */
+    }
+    .content_support ul.support_list_container::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .content_support li.support_list_box {
+      min-width: 320px;
+      width: calc(33.33vw + 50px);
+      /* scroll 시 snap > scroll-snap-align: start | center | end; */
+      scroll-snap-align: start;
+    }
+  }
+/* //@media (max-width: 1024px) */
+/* @media (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 화면에 1+ */
+  .content_support li.support_list_box {
+    min-width: 320px;
+    width: calc(50vw + 100px);
+  }
+}
+/* //@media (max-width: 768px) */
+/* @media (max-width: 576px) */
+@media (max-width: 576px) {
+  .content_support li.support_list_box {
+    min-width: 320px;
+    width: calc(100% - 80px);
+  }
+}
+/* //@media (max-width: 576px) */
 /* //ul.support_list_container */
 /* //.content_support */
+/* footer */
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #efefef;
+  
+}
+footer .footer_wrap {
+  display: flex;
+  background-color: rgb(178, 178, 178);
+  max-width:1440px;
+  margin:0 auto;
+  border: 1px solid #000;
+  padding:70px 0;
+}
+footer .footer_wrap strong.footer_logo {
+  width: 63px;
+  height: 13px;
+  background-image: url(../image/footer_logo.png);
+  background-size: 63px 13px;
+  order: 1;
+}
+footer .footer_wrap strong.footer_logo span.blind {}
+footer .footer_wrap ul li {
+}
+footer .footer_menu {
+  display: flex;
+  /* flex 메뉴 순서 바꾸기  */
+  order: 2;
+  margin-left: 2em;
+}
+footer .affiliate_box {
+  order: 4;
+  margin-left: auto;
+}
+footer .affiliate_box .btn_affiliate {
+  position: relative;
+}
+footer .affiliate_box ul.affiliate_list {
+  /* 자식 내용 인식 못하게 하기 위해서 */
+  position: absolute;
+}
+footer .affiliate_box li.affiliate_item {}
+footer .footer_copy {
+  position: absolute;
+  left: 50%;
+  transform: translateX();
+}
+/* //footer */
