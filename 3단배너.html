@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3단배너</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    .my-banner {
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+  <!-- 배너에 필요한 스타일 > mycss.css -->
+  <link rel="stylesheet" href="web/myfolder/css/mycss.css">
+</head>
+<body>
+  <!-- 
+    1차 > 이미지가 있는 3단 배너
+    2차 > ibase, commonselect 스킨에 해당하는 html과 css를 입력
+   -->
+   <!-- my 3단배너 시작 -->
+   <div class="my-banner">
+    <!-- 콘텐츠 요소 감싸기 위해 한번 더 class 지정 -->
+    <div class="my-banner-wrap">
+      <!-- 3단 배너 > 3 contents container = .col3 
+        n단 배너 > .col{n}
+      -->
+      <ul class="my-banner-container col3">
+        <li><a href="">
+          <img src="../st9/web/myfolder/main/product_banner1.png" alt="배너에 대한 설명 입력해줄 것"></a>
+        </li>
+        <li><a href="">
+          <img src="../st9/web/myfolder/main/product_banner2.png" alt="배너에 대한 설명 입력해줄 것"></a>
+        </li>
+        <li><a href="">
+          <img src="../st9/web/myfolder/main/product_banner3.png" alt="배너에 대한 설명 입력해줄 것"></a>
+        </li>
+      </ul>
+    </div>
+   </div>
+   <!-- //my 3단배너 종료 -->
+</body>
+</html>
