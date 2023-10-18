@@ -364,8 +364,17 @@ nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child {
 /* //.header_wrap nav 끝 */
 
 /* .header_wrap .header_util*/
-.header_wrap .header_util {}
-.header_util .header_Lang {}
+.header_wrap .header_util {
+  /* 
+    .header_util .header_Lang {}
+    .header_util .sitemap_box {}
+    flex item으로 만들기 위함
+  */
+  display: flex;
+}
+.header_util .header_Lang {
+  margin-right: 2em;
+}
 /* kor | eng 만들기 */
 .header_util .header_Lang a {
   /* `.header_util .header_Lang a:first-child::after의 기준조상 */
@@ -391,9 +400,61 @@ nav ul.gnb_dropMenu_wrap li .gnb_dropMenu .classify:first-child {
   opacity: 0.7;
 }
 /* // kor | eng 만들기  끝*/
-/* 햄버거 메뉴 만들기 */
 
-/* // 햄버거 메뉴 만들기 끝 */
+/* .header_util 햄버거 메뉴 만들기 */
+.header_util .sitemap_box {
+  /* .header_util .sitemap_box .btn_line의 기준조상 */
+  position: relative;
+  width: 24px;
+}
+.header_util .sitemap_box .btn_line {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: transform 0.2s;
+}
+
+.header_util .sitemap_box .btn_line:nth-of-type(2) {
+  top: 2px;
+  /* width: calc(24px - 4px); */
+}
+.header_util .sitemap_box .btn_line:nth-of-type(3) {
+  top: 10px;
+  /* width: calc(24px - 2px); */
+}
+.header_util .sitemap_box .btn_line:last-child {
+  top: 18px;
+}
+
+
+/* header.active  
+  햄버거 메뉴 click한 상태 
+*/
+header.active .header_util .sitemap_box .btn_line {
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+header.active .header_util .sitemap_box .btn_line {
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+header.active .header_util .sitemap_box .btn_line:nth-child(2) {
+  transform: rotate(-45deg) translateY(11px);
+}
+header.active .header_util .sitemap_box .btn_line:last-child {
+  transform: rotate(45deg) translateY(-11px);
+}
+header.active .header_util .sitemap_box .btn_line:nth-of-type(3){
+  /* 가운데 줄은 안보이게 */
+  opacity: 0;
+}
+/* //.header.active 막대 움직이기 끝 */
+
+
+/* //.header_util 햄버거 메뉴 만들기 끝*/
 /* //.header_wrap .header_util 끝*/
 /* //.header_wrap끝 */
 /* //header 끝 */
