@@ -1,0 +1,24 @@
+/* #header.fixed 수정 */
+#header.fixed {
+  background-color: rgba(255, 255, 255,0.7);
+}
+#header.fixed .inner .top_nav_box{
+  background-color: transparent;
+}
+
+#header.fixed > .inner .top_nav_box .top_logo {
+  /* 로고, 아이콘 안보이게 하기 */
+  display: none !important;
+}
+/* #header.fixed 수정 끝*/
+
+/* 썸네일 모서리 둥글게 */
+.main_product_slide .ec-base-product ul.prdList .thumbnail{
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.ec-base-product ul.grid5_slide > li.prdList_item .thumbnail a img {
+  border-radius: 10px;
+}

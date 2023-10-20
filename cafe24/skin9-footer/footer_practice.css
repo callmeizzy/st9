@@ -1,0 +1,113 @@
+/* #footer 수정 css 시작 */
+#footer {
+  --my-footer-logo-width: 400px;
+  --my-footer-inner-padding-top: 100px;
+}
+#footer ul li {
+    list-style: none;
+}
+#footer ul li a{
+    text-decoration: none;
+}
+#footer .inner {
+  /* #footer .inner .bt_wrap .bt_cscenter의 기준조상 */
+  position: relative;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* 교차축 정렬 */
+  align-items: flex-start; /*한 줄인 경우*/
+}
+/* #footer 1 content */
+#footer .inner .bt_logo {
+  order: 1;
+  flex: none;
+  width: var(--my-footer-logo-width); /*디자인에 따라 수정*/
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+/* #footer 3 content */
+#footer .inner .bt_util {
+  flex: none;
+  order: 2;
+  width: calc(100% - var(--my-footer-logo-width)); /* 로고 너비랑 동일하게*/
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+#footer .inner .bt_util ul li a {
+  line-height: 40px;
+}
+/* #footer 4(g-) content */
+#footer .inner .bt_wrap,
+#footer .inner .bt_wrap2 {
+  padding-top: 40px;
+}
+#footer .inner .bt_wrap {
+  order: 4;
+  box-sizing: border-box;
+  width: calc(100% - var(--my-footer-logo-width));
+  margin-bottom: 0;
+}
+#footer .inner .bt_wrap .bt_info {
+  margin-top: 0;
+}
+#footer .inner .bt_wrap .bt_info .title {
+  display: none;
+  font-size: 1.2em;
+}
+#footer .inner .bt_wrap .bt_cscenter {
+  position: absolute;
+  top: var(--my-footer-inner-padding-top);
+  right: 0;
+}
+#footer .inner .bt_wrap .bt_cscenter .bt_txt01 span:last-child {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1.4px;
+}
+#footer .inner .bt_wrap .bt_cscenter strong,
+#footer .inner .bt_wrap .bt_cscenter .pdr10 { 
+  display: none;
+}
+#footer .inner .bt_wrap .bt_cscenter .bt_txt02:nth-of-type(2) {
+  display: none;
+}
+#footer .inner .bt_wrap .bt_cscenter .bt_txt02:nth-of-type(3) span.dd span:first-child {
+  font-weight: bold;
+}
+#footer .inner .bt_wrap .bt_cscenter .bt_txt02:nth-of-type(3) > span > span {
+  display: block;
+}
+#footer .inner .bt_wrap .bt_bank{
+  display: none;
+}
+/* #footer content */
+#footer .inner .bt_escrow {
+  order: 5;
+  box-sizing: border-box;
+}
+/* #footer 2 content */
+#footer .inner .bt_wrap2 {
+  order: 3;
+  display: flex;
+  font-display: row;
+  flex-wrap: wrap;
+  width: var(--my-footer-logo-width);
+  box-sizing: border-box;
+  border-top: 0;
+}
+#footer .inner .bt_wrap2 .bt_copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  order: 2; 
+  width: 100%;
+  box-sizing: border-box;
+}
+#footer .inner .bt_wrap2 .bt_sns {
+  order: 1; width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 1em;
+}
+/* #footer 수정 완료 */
