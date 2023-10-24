@@ -1,0 +1,51 @@
+<aside id="aside" module="layout_slidePackage" data-ez="contents-1a7h73z-1">
+    <!--@css(/layout/basic/css/slideMenu.css)-->
+	<!--@js(/layout/basic/js/slide_menu.js)-->
+    <nav class="navigation-menu" role="navigation">
+		<div class="slide_top_inner">
+			<div class="slide_logo" module="Layout_LogoTop"><a href="/"><img src="{$logo}" alt="{$mall_name}" data-ez-eb="https://ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/upload/ezst/shop1/ez-logo-top.edibotbanner.json"></a></div><!-- //slide_logo -->
+			<button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
+
+			<div class="navigation_state" data-ez-group="top-util-menu" data-ez-role="list">
+				<a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
+				<a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
+				<a data-ez-item="modify" module="Layout_stateLogon" href="/member/modify.html">내정보수정</a>
+				<a data-ez-item="logout" module="Layout_stateLogon" href="{$action_logout}">로그아웃</a>
+				<a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
+				<a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
+				<a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
+			</div><!-- //navigation_state -->
+		</div><!-- //navigation-menu -->
+
+		<div class="nav_inner">
+			<div class="tab_inner">
+				<div data-ez-module="menu-side/1"><div id="slideCateList" class="navigation-menu__category">
+  <ul id="slide_add_category"><li><a href="/category/%F0%9F%92%A1-BEST-100/24/" class="view">💡 BEST 100</a></li><li><a href="/category/AUTUMN-%F0%9F%8D%82/25/" class="view">AUTUMN 🍂</a><ul class="sub_cate01"><li><a href="/category/%EC%A4%91%EB%B6%84%EB%A5%98/68/" class="view">중분류</a></li><li><a href="/category/%EC%A4%91%EB%B6%84%EB%A5%98-%EC%97%B0%EC%8A%B5/70/" class="view">중분류 연습</a></li></ul></li><li><a href="/category/DRESS/26/" class="view">DRESS</a></li><li><a href="/category/OUTER/27/" class="view">OUTER</a><ul class="sub_cate01"><li><a href="/category/Jacket/50/" class="view">Jacket</a></li><li><a href="/category/Tweed/51/" class="view">Tweed</a></li><li><a href="/category/Cardigan/52/" class="view">Cardigan</a></li></ul></li><li><a href="/category/TOP/28/" class="view">TOP</a><ul class="sub_cate01"><li><a href="/category/T-shirts/45/" class="view">T-shirts</a></li><li><a href="/category/Shirts/47/" class="view">Shirts</a></li><li><a href="/category/Blouse/48/" class="view">Blouse</a></li><li><a href="/category/Knit/54/" class="view">Knit</a></li></ul></li><li><a href="/category/BOTTOM/43/" class="view">BOTTOM</a><ul class="sub_cate01"><li><a href="/category/Denim/44/" class="view">Denim</a></li><li><a href="/category/Skirts/49/" class="view">Skirts</a></li><li><a href="/category/Slacks/55/" class="view">Slacks</a></li></ul></li><li><a href="/category/BAG/63/" class="view">BAG</a></li><li><a href="/category/SHOES/64/" class="view">SHOES</a></li></ul>
+  </div></div><!-- //menu-side/1 -->
+
+				<div class="community_tab">
+					<div class="side_title">고객센터<span></span></div>
+					<div class="board cboth">
+						<ul module="Layout_BoardInfo"><!-- 슬라이드 게시판 자동출력 -->
+							<li><a href="{$board_list_url}">{$board_name}</a></li>
+							<li><a href="{$board_list_url}">{$board_name}</a></li>
+						</ul>
+					</div>
+				</div><!-- //community_tab -->
+			</div><!-- //tab_inner -->
+
+			<div module="Layout_multishopList">
+				<button type="button" class="toggle lang_title">LANGUGE : {$current_language}<span></span></button>
+				<ul module="Layout_multishopListitem">
+					<li class="{$selected_class}">
+						<a href="//{$shop_domain}/">{$locale_language}</a>
+					</li>
+					<li class="{$selected_class}">
+						<a href="//{$shop_domain}/">{$locale_language}</a>
+					</li>
+				</ul>
+			</div>
+		</div><!-- //nav_inner -->
+	</nav>
+</aside>
+<!--#ez="1/4"-->
