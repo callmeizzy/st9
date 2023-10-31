@@ -1,0 +1,274 @@
+/* #header.fixed 수정 */
+#header.fixed {
+  background-color: rgba(255, 255, 255,0.7);
+}
+#header.fixed .inner .top_nav_box{
+  background-color: transparent;
+}
+#header.fixed > .inner .top_nav_box .top_logo {
+  /* 로고, 아이콘 안보이게 하기 */  
+    display: none !important;
+}
+/* #header.fixed 수정 끝*/
+/* custom_banner_wrap 수정 */
+#contents > .my_banner >.custom_banner_wrap {
+    width: 100%;
+    height: 100%;
+}
+.custom_banner_wrap .swiper-wrapper .swiper-slide img { 
+  width: 100%;
+  display: block;
+}
+/* scroll bar 위치 변경 */
+.swiper-horizontal> .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 1.2rem !important;
+}
+.custom_banner_wrap .swiper-scrollbar {
+  background-color: rgba(107, 55, 0, 0.4);
+ }
+ /* 스크롤 진행상태 변경 */
+ .custom_banner_wrap .swiper-scrollbar-drag {
+  background-color:  rgb(107, 55, 0, 0.8);
+ }
+ /* custom_banner_wrap 수정 끝*/
+/* 상/하 스크롤 시 배경이 움직이는 콘텐츠 영역 */
+#wrap .my_fixed_bg > .bg_fixed{
+  margin-top: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  height: 500px;
+  width: 100%;
+  background-image: url(//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/myimg/IMG_4030.JPG);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* 상/하 스크롤 시 배경이 움직이는 콘텐츠 영역 끝 */
+/* 공지사항과 고객센터 콘텐츠 영역 */
+#wrap .my_community {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid #000; */
+  color: #000000;
+  background-color: #ffffff;
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+}
+.my_community .notice {
+  padding: 45px 0;
+  padding-left: 60px;
+  padding-right: 50px;
+  margin-left: -100px;
+  /* border: 1px solid #000000; */
+  position: relative;
+  color: #000;
+}
+.my_community .notice .notice_wrap {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-left: -19px;
+}
+.my_community .notice .notice_wrap::after{
+  position: absolute;
+  content: '';
+  width: calc(100% - 80px);
+  height: 2px;
+  background-color: #000000;
+  top: 85px;
+  left: 40px;
+}
+.my_community .notice .notice_wrap > span {
+  padding-left: 20px;
+}
+.my_community .notice .notice_wrap > span strong {
+  font-size: 22px;
+  color: #373737;
+}
+.my_community .notice .notice_wrap > span.news_kor {
+  font-size: 18px;
+  color: #999;
+  padding-left: 10px;
+}
+.my_community .notice ul.notice_list li {
+  display: block;
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  list-style: outside;
+}
+.my_community .notice ul.notice_list li a {
+  position: relative;
+  padding-right: 120px;
+  display: block;
+}
+.my_community .notice ul.notice_list li a span.date {
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 0; 
+}
+.my_community .cscenter {
+  /* border: 1px solid #000; */
+  padding-top: 60px;
+  padding-left: 150px;
+  margin-right: 50px;
+}
+.my_community .cscenter li {
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.my_community .cscenter .hot_line {
+}
+.my_community .cscenter .hot_line {
+  font-size: 22px;
+}
+.my_community .cscenter .hot_line strong {
+  display: inline-block;
+  font-size: 42px;
+  padding-left: 30px;
+}
+.my_community .cscenter li.office_time {
+  display: flex;
+}
+.my_community .cscenter li span.title {
+  padding: 0 15px;
+}
+.my_community .cscenter li.office_time span.dd {
+  /* padding-left: 70px; */
+  display: block;
+  padding-left: 30px;
+}
+.my_community .cscenter li.office_mail span.title {
+  padding: 0 18px;
+}
+.my_community .cscenter li.office_mail span:nth-child(2) {
+  /* padding-left: 72px; */
+  padding-left: 25px;
+}
+.my_community .cscenter li.bt_wrap_cs {
+  padding-left: 115px;
+  font-weight: 500;
+}
+.my_community .cscenter li.bt_wrap_cs a {
+  border: 1px solid #7a7a7a;
+  float: left;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  width: 95px;
+  line-height: 36px;
+  margin-right: 9px;
+}
+.my_community .cscenter li.bt_wrap_cs a:last-child {
+  margin-right: 0;
+}
+.my_community .cscenter li.bt_wrap_cs a:hover {
+  background-color: rgba(107, 55, 0, 0.4);
+  border: 1px solid rgba(107, 55, 0, 0.1);
+  color: #ffffff;
+}
+#wrap > .footer_margin {
+  margin-top: 10px;
+}
+/* 공지사항과 고객센터 콘텐츠 영역 끝 */
+/* footer */
+#footer {
+  padding-top: 90px;
+}
+/* 오우이 기존 footer html중 안쓰는 것들 display:none 처리 */
+#footer .inner .bt_util,
+#footer .inner .bt_wrap > .bt_info > .title,
+#footer .inner .bt_wrap > .bt_info > .bt_cscenter,
+#footer .inner .bt_wrap > .bt_info > .bt_bank,
+#footer .inner .bt_wrap2 .bt_sns {
+	display: none !important;}
+
+/* 회사소개 / 이용약관 등 회사와 관련한 정보 */
+#footer nav.footer_nav {
+  background-color: rgba(107, 55, 0, 0.4);
+  height: 60px;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 35px;
+}
+#footer nav.footer_nav ul.nav_menu {
+  text-align: center;
+}
+#footer nav.footer_nav ul.nav_menu li.nav_menu_list {
+  display: inline-block;
+}
+#footer nav.footer_nav ul.nav_menu li.nav_menu_list a {
+  color: #fff;
+  padding: 0 80px;
+  /* border: 1px solid #000; */
+}
+#footer.layout1 .inner {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction:row;
+}
+/* 쇼핑몰 기본 정보 */
+#footer .inner .bt_wrap {
+flex-direction: row;
+}
+#footer .inner .bt_info {
+  position: relative;
+  font-size: 12px;
+  /* border: 1px solid #000; */
+  margin-left: 350px;
+  margin-right: 150px;
+  margin-bottom: 20px;
+  
+}
+#footer .inner .bt_info .bt_info_list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 500px;
+}
+#footer .inner .bt_info .bt_info_list::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  right: -60px;
+  background-color: #999;
+}
+#footer .inner .bt_info .bt_info_list span:first-child {
+  font-weight: 600;
+  font-size: 12px;
+}
+#footer .inner .bt_info .bt_info_list span:last-child {
+  padding-right: 10px;
+}
+#footer .inner .bt_info .bt_copy_right {
+  font-size: 14px;
+}
+#footer.layout1 .inner .bt_wrap {
+	margin-bottom: 10px;
+}
+#footer .inner .bt_wrap .bt_my_escrow {
+  font-size: 12px;
+  padding-top: 75px;
+  bottom: 5px;
+  right: 0;
+  /* border: 1px solid #000; */
+}
+#footer .inner .bt_wrap .bt_my_escrow > h3 {
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+#footer .inner .bt_wrap .bt_my_escrow > .escrow_info {
+  margin-bottom: 10px;
+}
+#footer .inner .bt_wrap .bt_my_escrow span {
+}
+#footer .inner .bt_wrap .bt_my_escrow a.bt_micro {
+  margin-left: 10px;
+  border: 1px solid #000;
+}

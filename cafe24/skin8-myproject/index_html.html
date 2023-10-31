@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>메인페이지 부분 수정</title>
+	<link rel="stylesheet" href="index_css.css">
+	<link rel="stylesheet" href="layout/basic/css/common.css">
+  <link rel="stylesheet" href="layout/basic/css/layout.css">
+  <link rel="stylesheet" href="index_css.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<!-- font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Nanum Brush Script', cursive; -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<!--@layout(/layout/basic/layout.html)-->
+		<!--@js(/layout/basic/js/main.js)-->
+		<!--@css(/layout/basic/css/main.css)-->
+		<!--@css(/mycss/mycss.css)-->
+		<!-- 커스텀 메인 배너 -->
+		<section class="my_banner" data-ez-module="html/1" data-ez-name="CUSTOM HTML" data-ez-type="plain"
+			data-ez="contents-1dugo8q-1" data-ez-layoutsize="full" data-ez-size-pc="1920 740" data-ez-size-mobile="720 850">
+			<div class="custom_banner_wrap">
+				<!-- Slider main container -->
+				<div class="swiper custom_banner">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide"> <img
+								src="//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/myimg/%E1%84%87%E1%85%A2%E1%84%82%E1%85%A5_1_%E1%84%8F%E1%85%B5%E1%84%8E%E1%85%B5_1920x740.png"
+								alt></div>
+						<div class="swiper-slide"><img
+								src="//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/myimg/%E1%84%87%E1%85%A2%E1%84%82%E1%85%A5_3_%E1%84%89%E1%85%B5%E1%84%8C%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A5%E1%86%BC_1920x740.png"
+								alt></div>
+					</div>
+					<!-- scrollbar -->
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+			<script>
+				// const swiper = new Swiper('.swiper', {를 아래로 수정. 변수명 변경
+				const custom_banner = new Swiper('.custom_banner', {
+					// Optional parameters
+					direction: 'horizontal',
+					loop: true,
+					// scrollbar
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+				});
+			</script>
+		</section>
+		<!-- //커스텀 메인 배너 끝 -->
+
+		<!-- 중간 롱배너 2ea 시작 -->
+		<section class="my_community" data-ez-module="html/1" data-ez-name="CUSTOM HTML" data-ez-type="plain"
+			data-ez="contents-1dugo8q-1" data-ez-layoutsize="full">
+		무료배송 롱배너 + 리뷰이벤트 롱배너 삽입
+		</section>
+		<!-- 중간 롱배너 2ea 끝 -->
+
+		<!-- custom md's pick banner 시작 -->
+		<section class="my_community" data-ez-module="html/1" data-ez-name="CUSTOM HTML" data-ez-type="plain"
+			data-ez="contents-1dugo8q-1" data-ez-layoutsize="full">
+			custom md's pick banner 시작
+		</section>
+		<!-- custom md's pick banner 끝 -->
+		
+		<!-- mouse scroll시 배경이 움직이는 custom html 시작-->
+		<section class="my_fixed_bg" data-ez-module="html/1" data-ez-name="CUSTOM HTML" data-ez-type="plain"
+			data-ez="contents-1dugo8q-1" data-ez-layoutsize="full" data-ez-size-pc="1920 740" data-ez-size-mobile="720 850">
+			<div class="bg_fixed"></div>
+		</section>
+		<!-- mouse scroll시 배경이 움직이는 custom html 끝-->
+
+		<!-- news and cs center 시작-->
+		<section class="my_community" data-ez-module="html/1" data-ez-name="CUSTOM HTML" data-ez-type="plain"
+			data-ez="contents-1dugo8q-1" data-ez-layoutsize="full">
+			<div class="notice">
+				<div class="notice_wrap">
+					<span><strong>NEWS</strong></span>
+					<span class="news_kor">공지사항</span>
+				</div>
+				<ul class="notice_list">
+					<li>
+						<a href="/" target="blank">
+						[안내] 11월 카드사 무이자/부분 무이자 안내
+						<span class="date">2023-10-27</span>
+						</a>
+					<li>
+						<a href="/" target="blank">
+						[안내] 11월 카드사 무이자
+						<span class="date">2023-10-25</span>
+						</a>         
+					<li>
+						<a href="/" target="blank">
+						[안내] 무이자/부분 무이자 안내
+						<span class="date">2023-10-19</span>
+						</a>
+					<li>
+						<a href="/" target="blank">
+						[안내] 무이자 안내
+						<span class="date">2023-10-08</span>
+						</a>
+					<li>
+						<a href="/" target="blank">
+						[안내] 무이자/부분 안내
+						<span class="date">2023-09-27</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="cscenter">
+				<ul>
+					<li class="hot_line">
+						고객센터
+						<strong>1234-5678</strong>
+					</li>
+					<li class="office_time">
+						<span class="title">운영시간</span>
+						<span>
+							<span class="dd">
+								<span>평일</span>
+								10:00 - 17:00
+							</span>
+							<span class="dd">
+								<span>점심시간</span>
+								12:00 - 13:30
+							</span>
+							<span class="dd">
+								토요일 / 일요일 / 법정공휴일 미운영
+							</span>
+						</span>
+					</li>
+					<li class="office_mail">
+						<span class="title">E-mail</span>
+						<span class="dd">
+							cs_help@loyly.com
+						</span>
+					</li>
+					<li class="bt_wrap_cs">
+						<a href="/" target="blank">FAQ</a>
+						<a href="/" target="blank">1:1 문의</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- news and cs center 끝-->
+		 <!-- footer 시작 -->
+		 <footer id="footer">
+      <div class="footer_wrap">
+        <!-- 회사소개 / 이용약관 등 회사와 관련한 정보 -->
+        <nav class="footer_nav">
+          <!-- 회사 소개 / 입점 상담 / 제휴 문의 / 이용약관 / 개인정보 처리 방침 / 체용정보  -->
+          <ul class="nav_menu">
+            <li class="nav_menu_list"><a href="/" target="_blank">회사소개</a></li>
+            <li class="nav_menu_list"><a href="/" target="_blank">입점상담</a></li>
+            <li class="nav_menu_list"><a href="/" target="_blank">제휴문의</a></li>
+            <li class="nav_menu_list"><a href="/" target="_blank">이용약관</a></li>
+            <li class="nav_menu_list"><a href="/" target="_blank">개인정보처리방침</a></li>
+            <li class="nav_menu_list"><a href="/" target="_blank">채용정보</a></li>
+          </ul>
+        </nav>
+        <!-- 쇼핑몰 기본 정보 -->
+      </div>
+    </footer>
+	</div>
+</body>
+</html>

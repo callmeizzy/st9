@@ -1,0 +1,24 @@
+/* bx-slide 화살표 변경 */
+.xans-smart-banner-admin-PC00004 .smart-banner-bx-wrapper .bx-controls-direction a {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px 100px;
+}
+
+.xans-smart-banner-admin-PC00004 .smart-banner-bx-wrapper .bx-prev {
+  background-image: url(//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/left.png)
+} 
+.xans-smart-banner-admin-PC00004 .smart-banner-bx-wrapper .bx-next {
+  background-image: url(//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/arrow-right.png);
+} 
+/* //bx-slide 화살표 변경 끝*/
+
+
+
+//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/main/banner1.jpg
+//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/main/banner2.jpg
+//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/main/banner3.jpg
+//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/main/m-banner1.jpg
+//ecimg.cafe24img.com/pg531b28337272005/callmeizzy/web/myfolder/main/m-banner2.jpg
