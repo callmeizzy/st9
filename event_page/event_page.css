@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style:none;
+  font-family: "ProximaNova-Medium","Noto Sans KR";
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+header {
+  width:100%;
+  height: 200px;
+  border: 1px solid #000;
+}
+header #header {}
+#header section.header_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 100px;
+  background-color: #e1a1a1;
+}
+#header .header_1 .header_img {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  font-weight: bold;
+}
+#header .header_1 .search {
+  height: 30px;
+  width: 300px;
+  background-color: rgba(193, 183, 185, 0.5);
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+#header .header_1 .search span {
+  padding-left: 70px;
+  margin-top: 100px;
+}
+#header section.header_2{
+  padding: 10px 100px;
+}
+#header section.header_2 nav.header_nav ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+#header section.header_2 nav.header_nav ul li {
+  width: 100px;
+  text-align: center;
+}
+
+/* <ul class="nav_menu"> 너비 조정해야 함 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+#footer {
+  border: 1px solid #000;
+  padding-top: 90px;
+  width: 100%;
+  height: 240px;
+  /* 헤더랑 콘텐츠 완성되면 none 해제하기 */
+}
+/* 쇼핑몰 기본 정보 */
+#footer .footer_wrap .footer_momo {
+  position: relative;
+  font-size: 12px;
+  /* border: 1px solid #000; */
+  margin-right: 400px;
+  margin-left: 400px;
+  margin-bottom: 20px;
+  
+}
+#footer .footer_wrap .footer_momo .bt_info_list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 500px;
+  padding-top: 40px;
+}
+#footer .footer_wrap .footer_momo .bt_info_list::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  top: 20px;
+  right: -250px;
+  background-color: #999;
+}
+#footer .footer_wrap .footer_momo .bt_info_list span:first-child {
+  font-weight: 600;
+  font-size: 12px;
+}
+#footer .footer_wrap .footer_momo .bt_info_list span:last-child {
+  padding-right: 10px;
+}
+#footer .footer_wrap .footer_momo .bt_copy_right {
+  font-size: 14px;
+}
+#footer .footer_wrap .footer_momo .bt_escrow {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  /* border: 1px solid #000; */
+}
+#footer .footer_wrap .footer_momo .bt_escrow h3 {
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+#footer .footer_wrap .footer_momo .bt_escrow .escrow_info {
+  margin-bottom: 10px;
+}
+#footer .footer_wrap .footer_momo .bt_escrow span {
+}
+#footer .footer_wrap .footer_momo .bt_escrow a.bt_micro {
+  margin-left: 10px;
+  border: 1px solid #000;
+}

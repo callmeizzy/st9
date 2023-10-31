@@ -1,4 +1,3 @@
-/* footer */
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +6,59 @@
   font-family: "ProximaNova-Medium","Noto Sans KR";
 }
 body {
-  background-color: #edf6d8;
+  background: #f5f5f5;
 }
 a {
   text-decoration: none;
   color: #000;
 }
-#footer {padding-top: 90px;
-  margin-bottom: 36px;
+
+#header > .inner > .top_nav_box > .top_mypage a {
+display: none;
+/* 아이콘들 일단 안보이게 해놓고 배너 작업 후 위치 재지정 */
+}
+/* #header.fixed 수정 */
+#header.fixed {
+  background-color: rgba(255, 255, 255,0.7);
+}
+#header.fixed .inner .top_nav_box{
+  background-color: transparent;
+}
+
+#header.fixed > .inner .top_nav_box .top_logo {
+  /* 로고, 아이콘 안보이게 하기 */
+  display: none !important;
+}
+/* #header.fixed 수정 끝*/
+/* custom_banner_wrap 수정 */
+.custom_banner_wrap {
+  width: 100%;
+  margin: 80px 0;
+}
+.custom_banner_wrap .swiper-wrapper{ 
+}
+.custom_banner_wrap .swiper-wrapper .swiper-slide { 
+}
+.custom_banner_wrap .swiper-wrapper .swiper-slide img{ 
+  display: block;
+  width: 100%; /*무조건 부모의 너비를 따른다*/
+  /* min-width: 100%; 부모의 너비를 따르지만 원래 이미지 크기보다는 커지지 말아라 */
+}
+/* scroll bar 위치 변경 */
+.swiper-horizontal> .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 1.2rem !important;
+}
+.custom_banner_wrap .swiper-scrollbar {
+  background-color: rgba(107, 55, 0, 0.4);
+ }
+ /* 스크롤 진행상태 변경 */
+ .custom_banner_wrap .swiper-scrollbar-drag {
+  background-color:  rgb(107, 55, 0, 0.8);
+ }
+ /* custom_banner_wrap 수정 끝*/
+ /* footer */
+#footer {
+  padding-top: 90px;
 }
 #footer .footer_wrap {
 }
@@ -178,7 +222,10 @@ a {
   position: relative;
   font-size: 12px;
   /* border: 1px solid #000; */
-  margin: 0 400px;
+  margin-right: 400px;
+  margin-left: 400px;
+  margin-bottom: 20px;
+  
 }
 #footer .footer_wrap .footer_content3 .bt_info_list {
   position: relative;
