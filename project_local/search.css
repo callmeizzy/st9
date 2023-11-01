@@ -1,0 +1,120 @@
+#header.layout3 {
+	height: 130px; 
+}
+#header.layout3 > .inner > .toparea.display_pc_only {
+    display: none;
+}
+#header.layout3 > .inner .top_nav_box {
+padding-bottom: 25px;
+align-items: center;}
+
+#header.layout3 > .inner .top_nav_box .top_logo {
+    order: 1;
+} 
+#header.layout3 > .inner .top_nav_box .top_logo a {
+	padding-top: 25px; 
+}
+#header.layout3 > .inner .top_nav_box .wrap_nav_info {
+  display:flex;
+  flex-direction: column;
+  order:2;
+}
+#header .inner .top_nav_box div[data-ez-module='menu-main/1'] {
+  height: 61px;
+}
+
+ /*삭제금지*/
+#searchBarForm {
+	position: relative;
+}
+#searchBarForm .xans-layout-searchheader {
+  position: absolute;
+  margin: auto 0;
+  width: 100px;
+  height: 44px;
+  opacity:100%; 
+  visibility: visible;
+  background: transparent;
+}
+#searchBarForm .xans-layout-searchheader .title {
+  visibility: hidden;
+}
+#searchBarForm .xans-layout-searchheader .btnClose {
+	position: unset;
+}
+#searchBarForm .xans-layout-searchheader > fieldset {
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 55px;
+  /* border: 2px solid #dfdfdf;
+  border-radius: 50px; */
+	width: 100px;
+}
+fieldset {
+  display: flex;
+  flex-direction: row;
+  vertical-align: top;
+}
+legend {
+  visibility: hidden;
+  left: -9999px;
+  top: -9999px;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  padding-inline-start: 2px;
+  padding-inline-end: 2px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+#searchBarForm .xans-layout-searchheader > fieldset :after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 353px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+
+#searchBarForm .xans-layout-searchheader > fieldset > #keyword {
+  width: 300px;
+  height: 36px;
+  margin: 1px 10px 0 25px;
+  border: 0;
+  line-height: 24px;
+  font-size: 14px;
+  color: #555;
+  background: transparent;
+  outline: none;
+} 
+.xans-layout-searchheader i {
+  cursor: pointer;
+  font-size: 24px;
+  vertical-align: middle;
+}
+.xi-search:before {
+  content: "\e97a";
+}
+.xans-layout-searchheader i {
+  visibility: hidden;
+}
+.xans-layout-searchheader img {
+   cursor: pointer;
+   height: 20px;
+   width: 20px;
+}
+#header.layout3 .inner .top_nav_box  .wrap_nav_info .top_category {
+  margin-top: 60px;
+}
+#header.layout3 .inner .top_nav_box .wrap_nav_info .top_category > ul > li > a:after {
+  bottom:20px;
+}
+#header.layout3 > .inner .top_nav_box .top_mypage {
+  order:3;
+  }    
+
+
+

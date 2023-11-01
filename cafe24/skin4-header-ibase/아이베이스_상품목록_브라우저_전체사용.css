@@ -1,0 +1,8 @@
+.xans-product-headcategory.titleArea {
+  /* contents 여백 너비 조정 */
+  position: relative;
+}
+.xans-product-headcategory.titleArea .banner {
+  position: absolute;
+}
+.xans-product-headcategory.titleArea .banner img {}

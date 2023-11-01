@@ -1,0 +1,10 @@
+/* 기획전 이미지 크기 조절 */
+@charset "UTF-8";
+.xans-project-package .banner {
+  text-align: center;
+}
+.xans-project-package .banner img {
+  max-width: 100%;
+
+  width: auto; /* 마진 보더 영역 제외한 나머지 영역을 내가 쓸게 = width:100% 와 대척됨 */
+}

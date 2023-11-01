@@ -1,0 +1,10 @@
+#contents > .titleArea {
+  max-width: none !important;
+  width: 100%;
+}
+#contents > .titleArea p.banner > img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
