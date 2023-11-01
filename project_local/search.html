@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      color: #353535;
+    }
+   * {
+      margin: 0px;
+      padding: 0px;
+    }
+    input {
+    font-size: 100%;
+    color: #353535;
+    vertical-align: middle;
+
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    cursor: text;
+    margin: 0em;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: rgb(118, 118, 118);
+    border-image: initial;
+    padding-block: 1px;
+    padding-inline: 2px;
+    }
+
+    input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+    padding: initial;
+    border: initial;
+    }
+
+    input[type=text], input[type=password] {
+    height: 18px;
+    line-height: 20px;
+    padding: 2px 4px;
+    border: 1px solid #d5d5d5;
+    color: #353535;
+    font-size: 12px;
+    }
+
+    input[type="text" i] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+    }
+
+    [class*=" xi-"], [class^=xi-] {
+    display: inline-block;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+    .xans-layout-searchheader {
+    margin: 0;
+    width: 365px;
+    height: 44px;
+    }
+    fieldset {
+    display: flex;
+    flex-direction: row;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+
+    vertical-align: top;
+    }
+    .xans-layout-searchheader fieldset {
+    border: 2px solid #dfdfdf;
+    border-radius: 50px;
+    }
+    legend {
+    visibility: hidden;
+    left: -9999px;
+    top: -9999px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    }
+    .xans-layout-searchheader #keyword {
+    width: 280px;
+    height: 36px;
+    margin: 1px 10px 0 25px;
+    border: 0;
+    line-height: 24px;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    outline: none;
+    } 
+    .xans-layout-searchheader i {
+    cursor: pointer;
+    color: #0067a3;
+    font-size: 24px;
+    vertical-align: middle;
+    }
+    .xi-search:before {
+    content: "\e97a";
+    }
+    .xans-layout-searchheader img {
+      height: 20px;
+      width: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <form id="searchBarForm" name="" action="/product/search.html" method="get" target="_self" enctype="multipart/form-data">
+    <input id="banner_action" name="banner_action" value="" type="hidden"><div class="xans-element- xans-layout xans-layout-searchheader "><!-- ** << 검색창 영역의 css를 변경하실 수 있습니다 _ 컬러변경  ** -->
+    <!--
+                    $product_page=/product/detail.html
+                    $category_page=/product/list.html
+                -->
+    <fieldset>
+    <legend>검색</legend>
+                <input id="keyword" name="keyword" fw-filter="" fw-label="검색어" fw-msg="" class="inputTypeText" placeholder="" onmousedown="SEARCH_BANNER.clickSearchForm(this)" value="" type="text"><i class="xi-search" onclick="SEARCH_BANNER.submitSearchBanner(this); return false;"></i>
+                <!--img src="/web/upload/goodymall/kr/layout/btn_search.gif" alt="검색" onclick="SEARCH_BANNER.submitSearchBanner(this); return false;" /-->
+                </fieldset>
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+

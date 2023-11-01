@@ -1,0 +1,7 @@
+.ec-base-product .spec .color {
+}
+.ec-base-product .spec .chips {
+  width: 20px;
+  height: 8px;
+  border-radius: 10px;
+}

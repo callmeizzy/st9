@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>검색창</title>
+  <style>
+    #top_bar .inner .top_right_search {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    margin-left: 20px;
+    }
+
+    #top_bar .inner .top_right_search .xans-layout-searchheader {
+    width: 100%;
+    display: inline-block;
+    font-size: 11px;
+    border: 1px solid #e8e8e8;
+    border-radius: 30px;
+    }
+
+    legend {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    } 
+
+    #top_bar .inner .top_right_search .fa {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font-size: 11px;
+    color: #555;
+    }
+
+    .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #top_bar .inner .top_right_search .xans-layout-searchheader #keyword {
+    background: none;
+    width: 100%;
+    height: 28px;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+    border: 0;
+    line-height: 28px;
+    font-size: 11px;
+    position: relative;
+    outline: none;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="top_right_search">
+    <form id="searchBarForm" name="" action="/product/search.html" method="get" target="_self"
+      enctype="multipart/form-data">
+      <input id="banner_action" name="banner_action" value="" type="hidden">
+      <div class="xans-element- xans-layout xans-layout-searchheader ">
+        <!--
+              $product_page=/product/detail.html
+            $category_page=/product/list.html
+      -->
+        <fieldset>
+          <legend>검색</legend>
+          <i class="fa fa-search" aria-hidden="true"
+            onclick="SEARCH_BANNER.submitSearchBanner(this); return false;"></i><input id="keyword" name="keyword"
+            fw-filter="" fw-label="검색어" fw-msg="" class="inputTypeText" placeholder=""
+            onmousedown="SEARCH_BANNER.clickSearchForm(this)" value="" type="text">
+          <fieldset></fieldset>
+        </fieldset>
+      </div>
+    </form>
+    <div class="keyword_list_box">
+      <!--
+■ 메인 롤링되는 검색어
+
+"" 따옴표 사이에는 클릭시 이동할 주소를 넣어주세요.
+예시) <a href="https://with-hawa.com/"><b>1</b>니트</a>
+-->
+
+
+
+
+
+
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EB%B6%80%EC%B8%A0%EC%BB%B7"><b>1</b>부츠컷</a><a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EC%8A%AC%EB%9E%99%EC%8A%A4"><b>2</b>슬랙스</a><a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%ED%8A%B8%EC%9C%84%EB%93%9C"><b>3</b>트위드</a><a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0"><b>4</b>오리지날</a><a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EB%B6%80%EC%B8%A0"><b>5</b>부츠</a>
+    </div>
+    <div class="keyword_list_view">
+      <!--
+■ 메인 롤링되는 검색어
+
+"" 따옴표 사이에는 클릭시 이동할 주소를 넣어주세요.
+예시) <a href="https://with-hawa.com/"><b>1</b>니트</a>
+-->
+
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EB%B6%80%EC%B8%A0%EC%BB%B7"><b>1</b>부츠컷</a>
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EC%8A%AC%EB%9E%99%EC%8A%A4"><b>2</b>슬랙스</a>
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%ED%8A%B8%EC%9C%84%EB%93%9C"><b>3</b>트위드</a>
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EC%98%A4%EB%A6%AC%EC%A7%80%EB%82%A0"><b>4</b>오리지날</a>
+      <a
+        href="https://with-hawa.com/product/search.html?view_type=&amp;supplier_code=&amp;category_no=0&amp;search_type=product_name&amp;keyword=%EB%B6%80%EC%B8%A0"><b>5</b>부츠</a>
+    </div>
+  </div>
+  </body>
+
+  </html>
